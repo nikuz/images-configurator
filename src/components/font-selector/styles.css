@@ -1,0 +1,75 @@
+
+.configurator-font-selector-container {
+    margin-right: 20px;
+    user-select: none;
+}
+
+.configurator-font-selector {
+    display: inline-block;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    color: #333;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.configurator-font-selector:hover {
+    background-color: var(--gray-light);
+}
+
+.configurator-font-selector-current-font {
+    width: 100px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+
+.configurator-font-selector-icon-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.configurator-font-selector:active .configurator-font-selector-icon-container {
+    top: 1px;
+}
+
+.configurator-font-selector-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.configurator-font-selector-blocker {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 1000;
+}
+
+.configurator-font-selector-tooltip {
+    position: absolute;
+    width: 300px;
+    overflow: auto;
+    background-color: var(--white);
+    text-align: center;
+    z-index: 1001;
+}
+
+.configurator-font-selector-tooltip-icon {
+    width: 200px;
+    height: 50px;
+}
+
+.configurator-font-selector-item {
+    cursor: pointer;
+}
+
+.configurator-font-selector-item:hover,
+.configurator-font-selector-item.active {
+    background-color: var(--gray-light);
+}

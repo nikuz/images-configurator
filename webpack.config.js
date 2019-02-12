@@ -90,6 +90,10 @@ const rules = [
             },
         ],
     },
+    {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+    },
 ];
 
 const options = {

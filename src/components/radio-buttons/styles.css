@@ -1,0 +1,59 @@
+
+.configurator-radio-buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    user-select: none;
+}
+
+.configurator-radio-buttons-item {
+    position: relative;
+    overflow: hidden;
+    padding: 6px 12px;
+    margin-left: -1px;
+    font-size: 18px;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    color: #333;
+    cursor: pointer;
+}
+
+.configurator-radio-buttons-item:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.configurator-radio-buttons-item:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.configurator-radio-buttons-item:hover,
+.configurator-radio-buttons-item.active {
+    background-color: var(--gray-light);
+    border-color: var(--gray-dark);
+}
+
+.configurator-radio-buttons-item.active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.configurator-radio-buttons-item.no-text {
+    font-size: 0;
+    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.configurator-radio-buttons-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.configurator-radio-buttons-blocker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}

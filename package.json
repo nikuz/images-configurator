@@ -1,13 +1,13 @@
 {
   "name": "@nikuz/images-configurator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "files": [
     "dst"
   ],
   "main": "dst/bundle.js",
   "scripts": {
-    "postinstall": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install redux@4.x.x && npm run create-stub",
+    "flow-typed": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install redux@4.x.x classnames@2.x.x && npm run create-stub",
     "create-stub": "flow-typed create-stub react-redux @nikuz/images-renderer",
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
@@ -28,6 +28,7 @@
     "@babel/preset-react": "7.0.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
+    "classnames": "2.2.6",
     "copy-webpack-plugin": "4.6.0",
     "css-loader": "2.1.0",
     "eslint": "5.12.1",
@@ -44,10 +45,12 @@
     "html-webpack-plugin": "3.2.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
+    "react-intl": "2.8.0",
     "react-redux": "6.0.0",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",
     "style-loader": "0.23.1",
+    "svg-sprite-loader": "^4.1.3",
     "terser-webpack-plugin": "1.2.1",
     "url-loader": "1.1.2",
     "webpack": "4.29.0",
