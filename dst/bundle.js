@@ -2800,18 +2800,18 @@ function (_React$Component) {
       var hCenterPosition = rect.top - rh / 2;
       var top = hCenterPosition;
 
-      if (hCenterPosition < 0) {
-        top = 0;
+      if (hCenterPosition < 0 || hCenterPosition < window.scrollY) {
+        top = window.scrollY;
       } else if (hCenterPosition + rh > wBottom) {
         top = hCenterPosition - (hCenterPosition + rh - wBottom);
       }
 
       tooltipEl.style.top = "".concat(top, "px");
       var wCenterPosition = rect.left - rw / 2;
-      var left = wCenterPosition;
+      var left = window.scrollX + wCenterPosition;
 
-      if (wCenterPosition < 0) {
-        left = 0;
+      if (wCenterPosition < 0 || wCenterPosition < window.scrollX) {
+        left = window.scrollX;
       } else if (wCenterPosition + rw > wRight) {
         left = wCenterPosition - (wCenterPosition + rw - wRight);
       }
