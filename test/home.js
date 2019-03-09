@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux';
 import React from 'react';
-import ImageRenderer from '@nikuz/images-renderer';
+import ImageRenderer from '@nikuz/images-core';
 import ImageConfigurator from '../src/index';
 import './styles.css';
 
@@ -12,33 +12,26 @@ const renderProps = {
     height: 600,
     imageURL: '/graphics/001.jpeg',
     // text
-    text: 'Specify the color of the box to write. For the general syntax of this option',
-    textFontFamily: 'GreatVibes',
-    textEffect: 'append-lines', // type | fade lines | fade letters | slide lines | append lines | fade
-    textAlign: 'right', // left | center | right
-    textVerticalAlign: 'top', // top | center | bottom
+    text: '',
+    textFontFamily: '',
+    textEffect: '', // type | fade lines | fade letters | slide lines | append lines | fade
+    textAlign: '', // left | center | right
+    textVerticalAlign: '', // top | center | bottom
     // author
-    author: 'William Longgood',
-    authorFontFamily: 'NickAinley',
-    authorEffect: 'fade', // type | slide | append | fade
-    authorAlign: 'left', // left | center | right
-    authorVerticalAlign: 'bottom', // top | center | bottom
+    author: '',
+    authorFontFamily: '',
+    authorEffect: '', // type | slide | append | fade
+    authorAlign: '', // left | center | right
+    authorVerticalAlign: '', // top | center | bottom
     // common
     animate: true,
     frameQuality: 0.93,
-    overlay: 'border', // solid | lines | border
+    overlay: '', // solid | lines | border
     color: '#FFF',
 };
 
 class Home extends React.Component<void> {
     rendererContainer: ?HTMLElement;
-
-    componentDidMount() {
-        this.renderImage({
-            ...renderProps,
-            container: this.rendererContainer,
-        });
-    }
 
     renderImage = (opts: Object) => {
         const canvas = new ImageRenderer(opts);
@@ -64,6 +57,8 @@ class Home extends React.Component<void> {
         return [
             <ImageConfigurator
                 key="configurator"
+                textEffectDisabled
+                authorEffectDisabled
                 onSubmit={this.onFilterChange}
             />,
             <div key="canvas" ref={el => this.rendererContainer = el} />,

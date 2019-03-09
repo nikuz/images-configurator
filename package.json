@@ -1,6 +1,6 @@
 {
   "name": "@nikuz/images-configurator",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "files": [
     "dst"
@@ -8,7 +8,7 @@
   "main": "dst/bundle.js",
   "scripts": {
     "flow-typed": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install redux@4.x.x classnames@2.x.x && npm run create-stub",
-    "create-stub": "flow-typed create-stub react-redux @nikuz/images-renderer",
+    "create-stub": "flow-typed create-stub react-redux @nikuz/images-core",
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "eslint": "eslint ./webpack.config.js ./src ./test -f table",
@@ -20,7 +20,7 @@
     "classnames": "2.2.6"
   },
   "devDependencies": {
-    "@nikuz/images-renderer": "github:nikuz/images-renderer",
+    "@nikuz/images-core": "github:nikuz/images-core",
     "@babel/core": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "7.3.1",
@@ -57,7 +57,7 @@
     "webpack-dev-server": "3.1.14"
   },
   "peerDependencies": {
-    "@nikuz/images-renderer": "*",
+    "@nikuz/images-core": "*",
     "react": ">=16.8.1",
     "react-dom": ">=16.8.1",
     "react-intl": ">=2.8.0",

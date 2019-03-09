@@ -37,6 +37,14 @@
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 
+.configurator-radio-buttons-item.disabled {
+    color: var(--gray);
+    background-color: var(--white);
+    border-color: var(--gray);
+    box-shadow: none;
+    cursor: default;
+}
+
 .configurator-radio-buttons-item.no-text {
     font-size: 0;
     padding: 6px 15px;

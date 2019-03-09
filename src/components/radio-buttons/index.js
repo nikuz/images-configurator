@@ -14,18 +14,29 @@ type Props = {
     id: string,
     items: Item[],
     active: string,
+    disabled?: boolean,
     className?: string | { [className: string]: * },
     itemsClassName?: string | { [className: string]: * },
     onChange: (data: ChangePayload) => *,
 };
 
 export default class RadioButtons extends React.Component<Props> {
+    static defaultProps = {
+        disabled: false,
+    };
+
     handleChoose = (item: Item) => {
-        const { id } = this.props;
-        this.props.onChange({
+        const {
             id,
-            value: item.id,
-        });
+            disabled,
+        } = this.props;
+
+        if (!disabled) {
+            this.props.onChange({
+                id,
+                value: item.id,
+            });
+        }
     };
 
     render() {
@@ -34,6 +45,7 @@ export default class RadioButtons extends React.Component<Props> {
             active,
             className,
             itemsClassName,
+            disabled,
         } = this.props;
         const containerClassName = cn('configurator-radio-buttons', className);
 
@@ -42,6 +54,7 @@ export default class RadioButtons extends React.Component<Props> {
                 { items.map((item) => {
                     const itemClassName = cn(
                         'configurator-radio-buttons-item',
+                        disabled && 'disabled',
                         itemsClassName,
                         item.id === active && 'active',
                         !item.text && 'no-text'

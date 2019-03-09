@@ -1,0 +1,26 @@
+
+.configurator-color-selector {
+    width: 225px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 12px;
+    border-radius: 4px;
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.configurator-color-selector-item {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.configurator-color-selector-item-wrap:hover,
+.configurator-color-selector-item.active {
+    position: relative;
+    outline: 2px solid #FFF;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}

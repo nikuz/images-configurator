@@ -26,7 +26,7 @@ if (isProduction) {
     cacheDirectory = false;
     devtool = false;
     externals = {
-        '@nikuz/images-renderer': '@nikuz/images-renderer',
+        '@nikuz/images-core': '@nikuz/images-core',
         react: 'react',
         'react-dom': 'react-dom',
         'react-intl': 'react-intl',

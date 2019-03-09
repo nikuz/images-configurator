@@ -17,3 +17,6 @@ import './down.svg';
 import './align-left.svg';
 import './align-center.svg';
 import './align-right.svg';
+import './vertical-top.svg';
+import './vertical-center.svg';
+import './vertical-bottom.svg';

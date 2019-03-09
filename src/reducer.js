@@ -60,9 +60,10 @@ const initialState = {
         id: 'lines',
         text: 'Configurator.Overlay.Lines',
     }],
-    text: 'Some smart and beautiful text!',
-    textFontFamily: 'Tahoma',
+    text: 'There is no elevator to success, you have to take the stairs.',
+    textFontFamily: 'Courgette',
     textAlign: 'center',
+    textVerticalAlign: 'center',
     textEffect: 'type',
     textEffects: [{
         id: 'type',
@@ -83,22 +84,40 @@ const initialState = {
         id: 'fade',
         text: 'Configurator.Quote-Text-Animation.Fade',
     }],
+    textVerticalAligns: [{
+        id: 'top',
+        icon: 'vertical-top',
+    }, {
+        id: 'center',
+        icon: 'vertical-center',
+    }, {
+        id: 'bottom',
+        icon: 'vertical-bottom',
+    }],
     separators: [{
         id: 'none',
         text: 'Configurator.Separator.None',
     }, {
-        id: 'ndash',
+        id: 'line',
         text: 'Configurator.Separator.Ndash',
     }, {
-        id: 'dashes',
+        id: 'dash',
         text: 'Configurator.Separator.Dashes',
     }, {
-        id: 'dots',
+        id: 'dot',
         text: 'Configurator.Separator.Dots',
     }],
     author: 'Quote Author',
     authorFontFamily: 'Lobster',
-    authorAlign: 'left',
+    authorAlign: 'center',
+    authorVerticalAlign: '',
+    authorVerticalAligns: [{
+        id: 'stick',
+        icon: 'vertical-top',
+    }, {
+        id: 'bottom',
+        icon: 'vertical-bottom',
+    }],
     authorEffect: 'fade',
     authorEffects: [{
         id: 'type',
@@ -163,6 +182,7 @@ const initialState = {
         id: 'right',
         icon: 'align-right',
     }],
+    color: '#FFFFFF'
 };
 
 export default function configurator(state: InitialStateType = initialState, action: Action) {

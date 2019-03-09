@@ -30,5 +30,6 @@
   "Configurator.Author-Text-Animation.Type": "Type",
   "Configurator.Author-Text-Animation.Slide": "Slide",
   "Configurator.Author-Text-Animation.Fade": "Fade",
+  "Configurator.Color.Title": "Color",
   "Configurator.Submit": "Apply"
 }

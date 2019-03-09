@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1373,12 +1373,6 @@ return sprite$1;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-intl");
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1433,6 +1427,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	} else {}
 }());
 
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-intl");
 
 /***/ }),
 /* 5 */
@@ -2122,7 +2122,7 @@ if(false) {}
 
 exports = module.exports = __webpack_require__(5)(false);
 // Module
-exports.push([module.i, "\n.configurator-radio-buttons {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    user-select: none;\n}\n\n.configurator-radio-buttons-item {\n    position: relative;\n    overflow: hidden;\n    padding: 6px 12px;\n    margin-left: -1px;\n    font-size: 18px;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    color: #333;\n    cursor: pointer;\n}\n\n.configurator-radio-buttons-item:first-child {\n    border-radius: 4px 0 0 4px;\n}\n\n.configurator-radio-buttons-item:last-child {\n    border-radius: 0 4px 4px 0;\n}\n\n.configurator-radio-buttons-item:hover,\n.configurator-radio-buttons-item.active {\n    background-color: var(--gray-light);\n    border-color: var(--gray-dark);\n}\n\n.configurator-radio-buttons-item.active {\n    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n}\n\n.configurator-radio-buttons-item.no-text {\n    font-size: 0;\n    padding: 6px 15px;\n    display: flex;\n    align-items: center;\n}\n\n.configurator-radio-buttons-icon {\n    width: 25px;\n    height: 25px;\n}\n\n.configurator-radio-buttons-blocker {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.configurator-radio-buttons {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    user-select: none;\n}\n\n.configurator-radio-buttons-item {\n    position: relative;\n    overflow: hidden;\n    padding: 6px 12px;\n    margin-left: -1px;\n    font-size: 18px;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    color: #333;\n    cursor: pointer;\n}\n\n.configurator-radio-buttons-item:first-child {\n    border-radius: 4px 0 0 4px;\n}\n\n.configurator-radio-buttons-item:last-child {\n    border-radius: 0 4px 4px 0;\n}\n\n.configurator-radio-buttons-item:hover,\n.configurator-radio-buttons-item.active {\n    background-color: var(--gray-light);\n    border-color: var(--gray-dark);\n}\n\n.configurator-radio-buttons-item.active {\n    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n}\n\n.configurator-radio-buttons-item.disabled {\n    color: var(--gray);\n    background-color: var(--white);\n    border-color: var(--gray);\n    box-shadow: none;\n    cursor: default;\n}\n\n.configurator-radio-buttons-item.no-text {\n    font-size: 0;\n    padding: 6px 15px;\n    display: flex;\n    align-items: center;\n}\n\n.configurator-radio-buttons-icon {\n    width: 25px;\n    height: 25px;\n}\n\n.configurator-radio-buttons-blocker {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 10;\n}\n", ""]);
 
 
 
@@ -2192,12 +2192,47 @@ if(false) {}
 
 exports = module.exports = __webpack_require__(5)(false);
 // Module
-exports.push([module.i, ":root {\n    --white: #FFF;\n    --gray: #CCC;\n    --gray-light: #E6E6E6;\n    --gray-dark: #ADADAD;\n    --blue: #1A5888;\n}\n\n.configurator-container {\n    margin-bottom: 20px;\n}\n\n.configurator-subtitle {\n    font-size: 20px;\n    margin: 20px 0 10px;\n    font-weight: 700;\n    color: #555;\n}\n\n.configurator-text-container {\n    display: inline-block;\n}\n\n.configurator-textarea {\n    width: 100%;\n    height: 100px;\n    max-height: 200px;\n    max-width: 400px;\n    min-width: 325px;\n    min-height: 50px;\n    padding: 2px 5px;\n    box-sizing: border-box;\n    font-size: 16px;\n}\n\n.configurator-input {\n    width: 100%;\n    height: 30px;\n    padding: 2px 5px;\n    margin-bottom: 5px;\n    box-sizing: border-box;\n    font-size: 16px;\n}\n\n.configurator-text-container-footer {\n    display: flex;\n    justify-content: space-between;\n}\n\n.configurator-submit {\n    margin-top: 20px;\n    height: 80px;\n    padding: 0 40px;\n    background-color: var(--blue);\n    color: var(--white);\n    border-radius: 20px;\n    font-size: 24px;\n    font-weight: bold;\n    cursor: pointer;\n    text-transform: uppercase;\n    -webkit-tap-highlight-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n.configurator-color-selector {\n    width: 225px;\n    background: #FFF;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 12px;\n    border-radius: 4px;\n    position: relative;\n    padding: 5px;\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.configurator-color-selector-item {\n    width: 25px;\n    height: 25px;\n    cursor: pointer;\n}\n\n.configurator-color-selector-item-wrap:hover,\n.configurator-color-selector-item.active {\n    position: relative;\n    outline: 2px solid #FFF;\n    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);\n    z-index: 2;\n}\n", ""]);
 
 
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(19);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(6)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(false);
+// Module
+exports.push([module.i, ":root {\n    --white: #FFF;\n    --gray: #CCC;\n    --gray-light: #E6E6E6;\n    --gray-dark: #ADADAD;\n    --blue: #1A5888;\n}\n\n.configurator-container {\n    margin-bottom: 20px;\n}\n\n.configurator-subtitle {\n    font-size: 20px;\n    margin: 20px 0 10px;\n    font-weight: 700;\n    color: #555;\n}\n\n.configurator-text-container {\n    display: inline-block;\n}\n\n.configurator-textarea {\n    width: 100%;\n    height: 100px;\n    max-height: 200px;\n    max-width: 600px;\n    min-width: 500px;\n    min-height: 50px;\n    padding: 2px 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-input {\n    width: 100%;\n    height: 30px;\n    padding: 2px 5px;\n    margin-bottom: 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-text-container-footer {\n    display: flex;\n    justify-content: space-between;\n}\n\n.configurator-text-vertical-align {\n    margin-left: 20px;\n}\n\n.configurator-submit {\n    margin-top: 20px;\n    height: 80px;\n    padding: 0 40px;\n    background-color: var(--blue);\n    color: var(--white);\n    border-radius: 20px;\n    font-size: 24px;\n    font-weight: bold;\n    cursor: pointer;\n    text-transform: uppercase;\n    -webkit-tap-highlight-color: transparent;\n    user-select: none;\n    outline: none;\n}\n", ""]);
+
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2210,8 +2245,12 @@ var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_)
 // EXTERNAL MODULE: external "react-redux"
 var external_react_redux_ = __webpack_require__(8);
 
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__(3);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
 // EXTERNAL MODULE: external "react-intl"
-var external_react_intl_ = __webpack_require__(3);
+var external_react_intl_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./src/constants.js
 var CONFIGURATOR_CHANGE = 'CONFIGURATOR_CHANGE';
@@ -2254,9 +2293,10 @@ var initialState = {
     id: 'lines',
     text: 'Configurator.Overlay.Lines'
   }],
-  text: 'Some smart and beautiful text!',
-  textFontFamily: 'Tahoma',
+  text: 'There is no elevator to success, you have to take the stairs.',
+  textFontFamily: 'Courgette',
   textAlign: 'center',
+  textVerticalAlign: 'center',
   textEffect: 'type',
   textEffects: [{
     id: 'type',
@@ -2277,22 +2317,40 @@ var initialState = {
     id: 'fade',
     text: 'Configurator.Quote-Text-Animation.Fade'
   }],
+  textVerticalAligns: [{
+    id: 'top',
+    icon: 'vertical-top'
+  }, {
+    id: 'center',
+    icon: 'vertical-center'
+  }, {
+    id: 'bottom',
+    icon: 'vertical-bottom'
+  }],
   separators: [{
     id: 'none',
     text: 'Configurator.Separator.None'
   }, {
-    id: 'ndash',
+    id: 'line',
     text: 'Configurator.Separator.Ndash'
   }, {
-    id: 'dashes',
+    id: 'dash',
     text: 'Configurator.Separator.Dashes'
   }, {
-    id: 'dots',
+    id: 'dot',
     text: 'Configurator.Separator.Dots'
   }],
   author: 'Quote Author',
   authorFontFamily: 'Lobster',
-  authorAlign: 'left',
+  authorAlign: 'center',
+  authorVerticalAlign: '',
+  authorVerticalAligns: [{
+    id: 'stick',
+    icon: 'vertical-top'
+  }, {
+    id: 'bottom',
+    icon: 'vertical-bottom'
+  }],
   authorEffect: 'fade',
   authorEffects: [{
     id: 'type',
@@ -2356,7 +2414,8 @@ var initialState = {
   }, {
     id: 'right',
     icon: 'align-right'
-  }]
+  }],
+  color: '#FFFFFF'
 };
 function configurator() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -2372,10 +2431,6 @@ function configurator() {
       return state;
   }
 }
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(4);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-
 // EXTERNAL MODULE: ./node_modules/svg-baker-runtime/browser-symbol.js
 var browser_symbol = __webpack_require__(1);
 var browser_symbol_default = /*#__PURE__*/__webpack_require__.n(browser_symbol);
@@ -2582,7 +2637,43 @@ var align_right_symbol = new browser_symbol_default.a({
 });
 var align_right_result = browser_sprite_build_default.a.add(align_right_symbol);
 /* harmony default export */ var align_right = (align_right_symbol);
+// CONCATENATED MODULE: ./src/icons/vertical-top.svg
+
+
+var vertical_top_symbol = new browser_symbol_default.a({
+  "id": "vertical-top",
+  "use": "vertical-top-usage",
+  "viewBox": "0 0 49 49",
+  "content": "<symbol viewBox=\"0 0 49 49\" xmlns=\"http://www.w3.org/2000/svg\" id=\"vertical-top\">\n    <path d=\"M17.933,21.497c-0.228,0.228 -0.297,0.572 -0.173,0.871c0.124,0.299 0.415,0.494 0.739,0.494c1.754,0 4.069,0 4.069,0c0,0 0,12.935 0,18c0,0.531 0.21,1.039 0.585,1.414c0.376,0.376 0.884,0.586 1.415,0.586c0.53,0 1.039,-0.21 1.414,-0.586c0.375,-0.375 0.586,-0.883 0.586,-1.414c0,-5.065 0,-18 0,-18c0,0 2.314,0 4.068,0c0.324,0 0.616,-0.195 0.739,-0.494c0.124,-0.299 0.056,-0.643 -0.173,-0.871c-1.781,-1.781 -4.817,-4.817 -6.069,-6.069c-0.15,-0.15 -0.353,-0.234 -0.565,-0.234c-0.213,0 -0.416,0.084 -0.566,0.234c-1.252,1.252 -4.288,4.288 -6.069,6.069Zm-7.365,-14.635c-0.531,0 -1.039,0.211 -1.415,0.586c-0.375,0.375 -0.585,0.884 -0.585,1.414c0,0.531 0.21,1.039 0.585,1.414c0.376,0.376 0.884,0.586 1.415,0.586c5.745,0 22.254,0 28,0c0.53,0 1.039,-0.21 1.414,-0.586c0.375,-0.375 0.586,-0.883 0.586,-1.414c0,-0.53 -0.211,-1.039 -0.586,-1.414c-0.375,-0.375 -0.884,-0.586 -1.414,-0.586c-5.746,0 -22.255,0 -28,0Z\" />\n</symbol>"
+});
+var vertical_top_result = browser_sprite_build_default.a.add(vertical_top_symbol);
+/* harmony default export */ var vertical_top = (vertical_top_symbol);
+// CONCATENATED MODULE: ./src/icons/vertical-center.svg
+
+
+var vertical_center_symbol = new browser_symbol_default.a({
+  "id": "vertical-center",
+  "use": "vertical-center-usage",
+  "viewBox": "0 0 49 49",
+  "content": "<symbol viewBox=\"0 0 49 49\" xmlns=\"http://www.w3.org/2000/svg\" id=\"vertical-center\">\n    <path d=\"M17.933,36.997c-0.228,0.228 -0.297,0.572 -0.173,0.871c0.124,0.299 0.415,0.494 0.739,0.494c1.754,0 4.069,0 4.069,0c0,0 0,3.631 0,6c0,1.105 0.895,2 2,2c1.104,0 2,-0.895 2,-2c0,-2.369 0,-6 0,-6c0,0 2.314,0 4.068,0c0.324,0 0.616,-0.195 0.739,-0.494c0.124,-0.299 0.056,-0.643 -0.173,-0.871c-1.781,-1.781 -4.817,-4.817 -6.069,-6.069c-0.15,-0.15 -0.353,-0.234 -0.565,-0.234c-0.213,0 -0.416,0.084 -0.566,0.234c-1.252,1.252 -4.288,4.288 -6.069,6.069Zm13.269,-25.269c0.229,-0.229 0.297,-0.573 0.173,-0.872c-0.123,-0.299 -0.415,-0.494 -0.739,-0.494c-1.754,0 -4.068,0 -4.068,0c0,0 0,-3.63 0,-6c0,-1.104 -0.896,-2 -2,-2c-1.105,0 -2,0.896 -2,2c0,2.37 0,6 0,6c0,0 -2.315,0 -4.069,0c-0.324,0 -0.615,0.195 -0.739,0.494c-0.124,0.299 -0.055,0.643 0.173,0.872c1.781,1.781 4.817,4.816 6.069,6.069c0.15,0.15 0.353,0.234 0.566,0.234c0.212,0 0.415,-0.084 0.565,-0.234c1.252,-1.253 4.288,-4.288 6.069,-6.069Zm-20.634,10.634c-0.531,0 -1.039,0.211 -1.415,0.586c-0.375,0.375 -0.585,0.884 -0.585,1.414c0,0.531 0.21,1.039 0.585,1.414c0.376,0.376 0.884,0.586 1.415,0.586c5.745,0 22.254,0 28,0c0.53,0 1.039,-0.21 1.414,-0.586c0.375,-0.375 0.586,-0.883 0.586,-1.414c0,-0.53 -0.211,-1.039 -0.586,-1.414c-0.375,-0.375 -0.884,-0.586 -1.414,-0.586c-5.746,0 -22.255,0 -28,0Z\" />\n</symbol>"
+});
+var vertical_center_result = browser_sprite_build_default.a.add(vertical_center_symbol);
+/* harmony default export */ var vertical_center = (vertical_center_symbol);
+// CONCATENATED MODULE: ./src/icons/vertical-bottom.svg
+
+
+var vertical_bottom_symbol = new browser_symbol_default.a({
+  "id": "vertical-bottom",
+  "use": "vertical-bottom-usage",
+  "viewBox": "0 0 49 49",
+  "content": "<symbol viewBox=\"0 0 49 49\" xmlns=\"http://www.w3.org/2000/svg\" id=\"vertical-bottom\">\n    <path d=\"M31.71,28.145c0.215,-0.215 0.279,-0.538 0.163,-0.819c-0.117,-0.281 -0.391,-0.464 -0.694,-0.464c-1.767,0 -4.186,0 -4.186,0c0,0 0,-12.935 0,-18c0,-0.53 -0.211,-1.039 -0.586,-1.414c-0.375,-0.375 -0.884,-0.586 -1.414,-0.586c-0.531,0 -1.04,0.211 -1.415,0.586c-0.375,0.375 -0.585,0.884 -0.585,1.414c0,5.065 0,18 0,18c0,0 -2.42,0 -4.186,0c-0.304,0 -0.578,0.183 -0.695,0.464c-0.116,0.281 -0.052,0.604 0.163,0.819c1.785,1.784 4.937,4.937 6.186,6.186c0.294,0.293 0.77,0.293 1.063,0c1.249,-1.249 4.402,-4.402 6.186,-6.186Zm-20.717,10.717c-0.531,0 -1.04,0.211 -1.415,0.586c-0.375,0.375 -0.585,0.884 -0.585,1.414c0,0.531 0.21,1.039 0.585,1.414c0.375,0.376 0.884,0.586 1.415,0.586c5.745,0 22.254,0 28,0c0.53,0 1.039,-0.21 1.414,-0.586c0.375,-0.375 0.586,-0.883 0.586,-1.414c0,-0.53 -0.211,-1.039 -0.586,-1.414c-0.375,-0.375 -0.884,-0.586 -1.414,-0.586c-5.746,0 -22.255,0 -28,0Z\" />\n</symbol>"
+});
+var vertical_bottom_result = browser_sprite_build_default.a.add(vertical_bottom_symbol);
+/* harmony default export */ var vertical_bottom = (vertical_bottom_symbol);
 // CONCATENATED MODULE: ./src/icons/index.js
+
+
+
 
 
 
@@ -2637,11 +2728,11 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function radio_buttons_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -2669,13 +2760,17 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(RadioButtons)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    radio_buttons_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChoose", function (item) {
-      var id = _this.props.id;
+    radio_buttons_defineProperty(_assertThisInitialized(_this), "handleChoose", function (item) {
+      var _this$props = _this.props,
+          id = _this$props.id,
+          disabled = _this$props.disabled;
 
-      _this.props.onChange({
-        id: id,
-        value: item.id
-      });
+      if (!disabled) {
+        _this.props.onChange({
+          id: id,
+          value: item.id
+        });
+      }
     });
 
     return _this;
@@ -2686,16 +2781,17 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var _this$props = this.props,
-          items = _this$props.items,
-          active = _this$props.active,
-          className = _this$props.className,
-          itemsClassName = _this$props.itemsClassName;
+      var _this$props2 = this.props,
+          items = _this$props2.items,
+          active = _this$props2.active,
+          className = _this$props2.className,
+          itemsClassName = _this$props2.itemsClassName,
+          disabled = _this$props2.disabled;
       var containerClassName = classnames_default()('configurator-radio-buttons', className);
       return external_react_default.a.createElement("ul", {
         className: containerClassName
       }, items.map(function (item) {
-        var itemClassName = classnames_default()('configurator-radio-buttons-item', itemsClassName, item.id === active && 'active', !item.text && 'no-text');
+        var itemClassName = classnames_default()('configurator-radio-buttons-item', disabled && 'disabled', itemsClassName, item.id === active && 'active', !item.text && 'no-text');
         return external_react_default.a.createElement("li", {
           key: item.id,
           className: itemClassName
@@ -2717,6 +2813,10 @@ function (_React$Component) {
   return RadioButtons;
 }(external_react_default.a.Component);
 
+radio_buttons_defineProperty(radio_buttons_RadioButtons, "defaultProps", {
+  disabled: false
+});
+
 
 // EXTERNAL MODULE: ./src/components/font-selector/styles.css
 var font_selector_styles = __webpack_require__(14);
@@ -2734,11 +2834,11 @@ function font_selector_possibleConstructorReturn(self, call) { if (call && (font
 
 function font_selector_getPrototypeOf(o) { font_selector_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return font_selector_getPrototypeOf(o); }
 
+function font_selector_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function font_selector_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) font_selector_setPrototypeOf(subClass, superClass); }
 
 function font_selector_setPrototypeOf(o, p) { font_selector_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return font_selector_setPrototypeOf(o, p); }
-
-function font_selector_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function font_selector_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -2765,13 +2865,13 @@ function (_React$Component) {
 
     _this = font_selector_possibleConstructorReturn(this, (_getPrototypeOf2 = font_selector_getPrototypeOf(FontSelector)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "state", {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "state", {
       opened: false
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "tooltipEl", void 0);
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "tooltipEl", void 0);
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "handleResize", function () {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "handleResize", function () {
       var opened = _this.state.opened;
       var tooltipEl = _this.tooltipEl;
 
@@ -2819,7 +2919,7 @@ function (_React$Component) {
       tooltipEl.style.left = "".concat(left, "px");
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "getActiveFont", function () {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "getActiveFont", function () {
       var _this$props = _this.props,
           fonts = _this$props.fonts,
           active = _this$props.active;
@@ -2829,7 +2929,7 @@ function (_React$Component) {
       return activeFont || fonts[0];
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "handleChoose", function (item) {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "handleChoose", function (item) {
       var id = _this.props.id;
 
       _this.props.onChange({
@@ -2840,19 +2940,19 @@ function (_React$Component) {
       _this.handleClose();
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "handleOpen", function () {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "handleOpen", function () {
       _this.setState({
         opened: true
       });
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "handleClose", function () {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "handleClose", function () {
       _this.setState({
         opened: false
       });
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "renderFontItem", function (item) {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "renderFontItem", function (item) {
       var _this$props2 = _this.props,
           itemsClassName = _this$props2.itemsClassName,
           active = _this$props2.active;
@@ -2869,7 +2969,7 @@ function (_React$Component) {
       }));
     });
 
-    font_selector_defineProperty(font_selector_assertThisInitialized(font_selector_assertThisInitialized(_this)), "renderTooltip", function () {
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "renderTooltip", function () {
       var fonts = _this.props.fonts;
       var opened = _this.state.opened;
 
@@ -2937,6 +3037,154 @@ function (_React$Component) {
 }(external_react_default.a.Component);
 
 
+// EXTERNAL MODULE: ./src/components/color-selector/styles.css
+var color_selector_styles = __webpack_require__(16);
+
+// CONCATENATED MODULE: ./src/components/color-selector/index.js
+function color_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { color_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { color_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return color_selector_typeof(obj); }
+
+function color_selector_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function color_selector_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function color_selector_createClass(Constructor, protoProps, staticProps) { if (protoProps) color_selector_defineProperties(Constructor.prototype, protoProps); if (staticProps) color_selector_defineProperties(Constructor, staticProps); return Constructor; }
+
+function color_selector_possibleConstructorReturn(self, call) { if (call && (color_selector_typeof(call) === "object" || typeof call === "function")) { return call; } return color_selector_assertThisInitialized(self); }
+
+function color_selector_getPrototypeOf(o) { color_selector_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return color_selector_getPrototypeOf(o); }
+
+function color_selector_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function color_selector_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) color_selector_setPrototypeOf(subClass, superClass); }
+
+function color_selector_setPrototypeOf(o, p) { color_selector_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return color_selector_setPrototypeOf(o, p); }
+
+function color_selector_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var color_selector_ColorSelector =
+/*#__PURE__*/
+function (_React$Component) {
+  color_selector_inherits(ColorSelector, _React$Component);
+
+  function ColorSelector() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    color_selector_classCallCheck(this, ColorSelector);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = color_selector_possibleConstructorReturn(this, (_getPrototypeOf2 = color_selector_getPrototypeOf(ColorSelector)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    color_selector_defineProperty(color_selector_assertThisInitialized(_this), "handleChoose", function (color) {
+      _this.props.onChange({
+        id: _this.props.id,
+        value: color
+      });
+    });
+
+    color_selector_defineProperty(color_selector_assertThisInitialized(_this), "colors", [{
+      name: 'White',
+      value: '#FFFFFF'
+    }, {
+      name: 'Aureolin',
+      value: '#FDEE00'
+    }, {
+      name: 'Amber',
+      value: '#FF7E00'
+    }, {
+      name: 'Lime',
+      value: '#D0FF14'
+    }, {
+      name: 'Green',
+      value: '#00FF00'
+    }, {
+      name: 'Aqua',
+      value: '#00FFFF'
+    }, {
+      name: 'Azure',
+      value: '#007FFF'
+    }, {
+      name: 'Shades of pink',
+      value: '#FF007F'
+    }, {
+      name: 'Candy apple red',
+      value: '#FF0800'
+    }, {
+      name: 'Shades of white',
+      value: '#E2E5DE'
+    }, {
+      name: 'Lemon yellow',
+      value: '#FFFF9F'
+    }, {
+      name: 'Light goldenrod',
+      value: '#FFEC8B'
+    }, {
+      name: 'Light moss green',
+      value: '#ADDFAD'
+    }, {
+      name: 'Alien Armpit',
+      value: '#84DE02'
+    }, {
+      name: 'Light cyan',
+      value: '#E0FFFF'
+    }, {
+      name: 'Light sky blue',
+      value: '#87CEFA'
+    }, {
+      name: 'Light deep pink',
+      value: '#FF5CCD'
+    }, {
+      name: 'Shades of red',
+      value: '#FF6961'
+    }]);
+
+    color_selector_defineProperty(color_selector_assertThisInitialized(_this), "renderColor", function (color) {
+      var _this$props = _this.props,
+          active = _this$props.active,
+          itemsClassName = _this$props.itemsClassName;
+      var style = {
+        backgroundColor: color.value
+      };
+      var className = classnames_default()('configurator-color-selector-item', color.value === active && 'active', itemsClassName);
+      return external_react_default.a.createElement("div", {
+        key: color.value,
+        className: "configurator-color-selector-item-wrap",
+        title: color.name
+      }, external_react_default.a.createElement("div", {
+        className: className,
+        style: style,
+        onClick: function onClick() {
+          return _this.handleChoose(color.value);
+        }
+      }));
+    });
+
+    return _this;
+  }
+
+  color_selector_createClass(ColorSelector, [{
+    key: "render",
+    value: function render() {
+      var className = this.props.className;
+      var containerClassName = classnames_default()('configurator-color-selector', className);
+      return external_react_default.a.createElement("div", {
+        className: containerClassName
+      }, this.colors.map(this.renderColor));
+    }
+  }]);
+
+  return ColorSelector;
+}(external_react_default.a.Component);
+
+
 // CONCATENATED MODULE: ./src/actions.js
 
 var actions_change = function change(data) {
@@ -2946,7 +3194,7 @@ var actions_change = function change(data) {
   };
 };
 // EXTERNAL MODULE: ./src/styles.css
-var src_styles = __webpack_require__(16);
+var src_styles = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/index.js
 /* concated harmony reexport configuratorReducer */__webpack_require__.d(__webpack_exports__, "configuratorReducer", function() { return configurator; });
@@ -2962,13 +3210,15 @@ function src_possibleConstructorReturn(self, call) { if (call && (src_typeof(cal
 
 function src_getPrototypeOf(o) { src_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return src_getPrototypeOf(o); }
 
+function src_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function src_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) src_setPrototypeOf(subClass, superClass); }
 
 function src_setPrototypeOf(o, p) { src_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return src_setPrototypeOf(o, p); }
 
-function src_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function src_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -2997,7 +3247,7 @@ function (_React$Component) {
 
     _this = src_possibleConstructorReturn(this, (_getPrototypeOf2 = src_getPrototypeOf(Configurator)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    src_defineProperty(src_assertThisInitialized(src_assertThisInitialized(_this)), "textValueChange", function (e) {
+    src_defineProperty(src_assertThisInitialized(_this), "textValueChange", function (e) {
       var id = e.target.id;
       var value = e.target.value;
 
@@ -3007,7 +3257,7 @@ function (_React$Component) {
       });
     });
 
-    src_defineProperty(src_assertThisInitialized(src_assertThisInitialized(_this)), "handleSubmit", function (e) {
+    src_defineProperty(src_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
       var _this$props = _this.props,
           imageFilter = _this$props.imageFilter,
@@ -3015,12 +3265,17 @@ function (_React$Component) {
           text = _this$props.text,
           textFontFamily = _this$props.textFontFamily,
           textAlign = _this$props.textAlign,
+          textVerticalAlign = _this$props.textVerticalAlign,
           textEffect = _this$props.textEffect,
+          textEffectDisabled = _this$props.textEffectDisabled,
           separator = _this$props.separator,
           author = _this$props.author,
           authorFontFamily = _this$props.authorFontFamily,
           authorAlign = _this$props.authorAlign,
-          authorEffect = _this$props.authorEffect;
+          authorVerticalAlign = _this$props.authorVerticalAlign,
+          authorEffect = _this$props.authorEffect,
+          authorEffectDisabled = _this$props.authorEffectDisabled,
+          color = _this$props.color;
 
       _this.props.onSubmit({
         imageFilter: imageFilter,
@@ -3028,12 +3283,16 @@ function (_React$Component) {
         text: text,
         textFontFamily: textFontFamily,
         textAlign: textAlign,
+        textVerticalAlign: textVerticalAlign,
         textEffect: textEffect,
         separator: separator,
         author: author,
         authorFontFamily: authorFontFamily,
         authorAlign: authorAlign,
-        authorEffect: authorEffect
+        authorVerticalAlign: authorVerticalAlign,
+        authorEffect: authorEffect,
+        color: color,
+        animate: !textEffectDisabled && !authorEffectDisabled
       });
     });
 
@@ -3051,41 +3310,69 @@ function (_React$Component) {
           text = _this$props2.text,
           textFontFamily = _this$props2.textFontFamily,
           textAlign = _this$props2.textAlign,
+          textVerticalAlign = _this$props2.textVerticalAlign,
+          textVerticalAligns = _this$props2.textVerticalAligns,
           textEffect = _this$props2.textEffect,
+          textEffectDisabled = _this$props2.textEffectDisabled,
           textEffects = _this$props2.textEffects,
           separator = _this$props2.separator,
           separators = _this$props2.separators,
           author = _this$props2.author,
           authorFontFamily = _this$props2.authorFontFamily,
           authorAlign = _this$props2.authorAlign,
+          authorVerticalAlign = _this$props2.authorVerticalAlign,
+          authorVerticalAligns = _this$props2.authorVerticalAligns,
           authorEffect = _this$props2.authorEffect,
+          authorEffectDisabled = _this$props2.authorEffectDisabled,
           authorEffects = _this$props2.authorEffects,
           fonts = _this$props2.fonts,
-          aligns = _this$props2.aligns;
+          aligns = _this$props2.aligns,
+          color = _this$props2.color,
+          radioButtonClassName = _this$props2.radioButtonClassName,
+          radioButtonItemClassName = _this$props2.radioButtonItemClassName,
+          colorSelectorClassName = _this$props2.colorSelectorClassName,
+          colorSelectorItemClassName = _this$props2.colorSelectorItemClassName,
+          fontSelectorClassName = _this$props2.fontSelectorClassName,
+          fontSelectorItemClassName = _this$props2.fontSelectorItemClassName;
+      var _this$props3 = this.props,
+          containerClassName = _this$props3.containerClassName,
+          subtitleClassName = _this$props3.subtitleClassName,
+          submitButtonClassName = _this$props3.submitButtonClassName,
+          textareaClassName = _this$props3.textareaClassName,
+          inputClassName = _this$props3.inputClassName;
+      containerClassName = classnames_default()('configurator-container', containerClassName);
+      subtitleClassName = classnames_default()('configurator-subtitle', subtitleClassName);
+      submitButtonClassName = classnames_default()('configurator-submit', submitButtonClassName);
+      textareaClassName = classnames_default()('configurator-textarea', textareaClassName);
+      inputClassName = classnames_default()('configurator-input', inputClassName);
       return external_react_default.a.createElement("form", {
         action: "#",
         onSubmit: this.handleSubmit,
-        className: "configurator-container"
+        className: containerClassName
       }, external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Image-Filter.Title"
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "imageFilter",
         items: imageFilters,
         active: imageFilter,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Overlay.Title"
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "overlay",
         items: overlays,
         active: overlay,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Quote-Text.Title"
       })), external_react_default.a.createElement("div", {
@@ -3094,7 +3381,7 @@ function (_React$Component) {
         id: "text",
         onChange: this.textValueChange,
         value: text,
-        className: "configurator-textarea",
+        className: textareaClassName,
         maxLength: 255
       }), external_react_default.a.createElement("div", {
         className: "configurator-text-container-footer"
@@ -3102,32 +3389,48 @@ function (_React$Component) {
         id: "textFontFamily",
         fonts: fonts,
         active: textFontFamily,
+        className: fontSelectorClassName,
+        itemsClassName: fontSelectorItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textAlign",
         items: aligns,
         active: textAlign,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
+        onChange: this.props.onChange
+      }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
+        id: "textVerticalAlign",
+        items: textVerticalAligns,
+        active: textVerticalAlign,
+        className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
+        itemsClassName: radioButtonItemClassName,
         onChange: this.props.onChange
       }))), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Quote-Text-Animation.Title"
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textEffect",
         items: textEffects,
         active: textEffect,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
+        disabled: textEffectDisabled,
         onChange: this.props.onChange
       }), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Separator.Title"
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "separator",
         items: separators,
         active: separator,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Author-Text.Title"
       })), external_react_default.a.createElement("div", {
@@ -3136,7 +3439,7 @@ function (_React$Component) {
         type: "text",
         id: "author",
         value: author,
-        className: "configurator-input",
+        className: inputClassName,
         maxLength: 60,
         onChange: this.textValueChange
       }), external_react_default.a.createElement("div", {
@@ -3145,24 +3448,48 @@ function (_React$Component) {
         id: "authorFontFamily",
         fonts: fonts,
         active: authorFontFamily,
+        className: fontSelectorClassName,
+        itemsClassName: fontSelectorItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorAlign",
         items: aligns,
         active: authorAlign,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
+        onChange: this.props.onChange
+      }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
+        id: "authorVerticalAlign",
+        items: authorVerticalAligns,
+        active: authorVerticalAlign,
+        className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
+        itemsClassName: radioButtonItemClassName,
         onChange: this.props.onChange
       }))), external_react_default.a.createElement("h3", {
-        className: "configurator-subtitle"
+        className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Author-Text-Animation.Title"
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorEffect",
         items: authorEffects,
         active: authorEffect,
+        className: radioButtonClassName,
+        itemsClassName: radioButtonItemClassName,
+        disabled: authorEffectDisabled,
+        onChange: this.props.onChange
+      }), external_react_default.a.createElement("h3", {
+        className: subtitleClassName
+      }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
+        id: "Configurator.Color.Title"
+      })), external_react_default.a.createElement(color_selector_ColorSelector, {
+        id: "color",
+        active: color,
+        className: colorSelectorClassName,
+        itemsClassName: colorSelectorItemClassName,
         onChange: this.props.onChange
       }), external_react_default.a.createElement("button", {
         type: "submit",
-        className: "configurator-submit"
+        className: submitButtonClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: "Configurator.Submit"
       })));
@@ -3171,6 +3498,11 @@ function (_React$Component) {
 
   return Configurator;
 }(external_react_default.a.Component);
+
+src_defineProperty(src_Configurator, "defaultProps", {
+  textEffectDisabled: false,
+  authorEffectDisabled: false
+});
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
@@ -3181,6 +3513,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     text: state.configurator.text || ownProps.text || '',
     textFontFamily: state.configurator.textFontFamily || ownProps.textFontFamily,
     textAlign: state.configurator.textAlign || ownProps.textAlign,
+    textVerticalAlign: state.configurator.textVerticalAlign || ownProps.textVerticalAlign,
+    textVerticalAligns: state.configurator.textVerticalAligns,
     textEffect: state.configurator.textEffect || ownProps.textEffect,
     textEffects: state.configurator.textEffects.concat(ownProps.textEffects || []),
     separator: state.configurator.separator || ownProps.separator || 'none',
@@ -3188,10 +3522,13 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     author: state.configurator.author || ownProps.author || '',
     authorFontFamily: state.configurator.authorFontFamily || ownProps.authorFontFamily,
     authorAlign: state.configurator.authorAlign || ownProps.authorAlign,
+    authorVerticalAlign: state.configurator.authorVerticalAlign || ownProps.authorVerticalAlign,
+    authorVerticalAligns: state.configurator.authorVerticalAligns,
     authorEffect: state.configurator.authorEffect || ownProps.authorEffect,
     authorEffects: state.configurator.authorEffects.concat(ownProps.authorEffects || []),
     fonts: state.configurator.fonts,
-    aligns: state.configurator.aligns
+    aligns: state.configurator.aligns,
+    color: state.configurator.color
   };
 };
 
