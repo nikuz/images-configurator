@@ -56,6 +56,7 @@ type Props = {
     submitButtonClassName?: string | { [className: string]: * },
     textareaClassName?: string | { [className: string]: * },
     inputClassName?: string | { [className: string]: * },
+    translationDomain?: string,
     onChange?: (data: ChangePayload) => *,
     onSubmit: (data: SubmitData) => *,
 };
@@ -293,6 +294,11 @@ export default class Configurator extends React.Component<Props, State> {
         });
     };
 
+    getTranslationId = (id: string) => {
+        const { translationDomain } = this.props;
+        return `${translationDomain ? `${translationDomain}.` : ''}${id}`;
+    };
+
     handleSubmit = (e) => {
         e.preventDefault();
 
@@ -346,6 +352,7 @@ export default class Configurator extends React.Component<Props, State> {
             fontSelectorItemClassName,
             textEffectDisabled,
             authorEffectDisabled,
+            translationDomain,
         } = this.props;
         const {
             imageFilter,
@@ -404,7 +411,9 @@ export default class Configurator extends React.Component<Props, State> {
         return (
             <form action="#" onSubmit={this.handleSubmit} className={containerClassName}>
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Image-Filter.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Image-Filter.Title')}
+                    />
                 </h3>
                 <RadioButtons
                     id="imageFilter"
@@ -412,11 +421,14 @@ export default class Configurator extends React.Component<Props, State> {
                     active={imageFilter}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
+                    translationDomain={translationDomain}
                     onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Overlay.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Overlay.Title')}
+                    />
                 </h3>
                 <RadioButtons
                     id="overlay"
@@ -424,11 +436,14 @@ export default class Configurator extends React.Component<Props, State> {
                     active={overlay}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
+                    translationDomain={translationDomain}
                     onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Quote-Text.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Quote-Text.Title')}
+                    />
                 </h3>
                 <div className="configurator-text-container">
                     <textarea
@@ -453,6 +468,7 @@ export default class Configurator extends React.Component<Props, State> {
                             active={textAlign}
                             className={radioButtonClassName}
                             itemsClassName={radioButtonItemClassName}
+                            translationDomain={translationDomain}
                             onChange={this.handleChange}
                         />
                         <RadioButtons
@@ -461,13 +477,16 @@ export default class Configurator extends React.Component<Props, State> {
                             active={textVerticalAlign}
                             className={cn('configurator-text-vertical-align', radioButtonClassName)}
                             itemsClassName={radioButtonItemClassName}
+                            translationDomain={translationDomain}
                             onChange={this.handleChange}
                         />
                     </div>
                 </div>
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Quote-Text-Animation.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Quote-Text-Animation.Title')}
+                    />
                 </h3>
                 <RadioButtons
                     id="textEffect"
@@ -476,11 +495,14 @@ export default class Configurator extends React.Component<Props, State> {
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
                     disabled={textEffectDisabled}
+                    translationDomain={translationDomain}
                     onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Separator.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Separator.Title')}
+                    />
                 </h3>
                 <RadioButtons
                     id="separator"
@@ -488,11 +510,14 @@ export default class Configurator extends React.Component<Props, State> {
                     active={separator}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
+                    translationDomain={translationDomain}
                     onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Author-Text.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Author-Text.Title')}
+                    />
                 </h3>
                 <div className="configurator-text-container">
                     <input
@@ -518,6 +543,7 @@ export default class Configurator extends React.Component<Props, State> {
                             active={authorAlign}
                             className={radioButtonClassName}
                             itemsClassName={radioButtonItemClassName}
+                            translationDomain={translationDomain}
                             onChange={this.handleChange}
                         />
                         <RadioButtons
@@ -526,6 +552,7 @@ export default class Configurator extends React.Component<Props, State> {
                             active={authorVerticalAlign}
                             className={cn('configurator-text-vertical-align', radioButtonClassName)}
                             itemsClassName={radioButtonItemClassName}
+                            translationDomain={translationDomain}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -533,7 +560,9 @@ export default class Configurator extends React.Component<Props, State> {
 
 
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Author-Text-Animation.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Author-Text-Animation.Title')}
+                    />
                 </h3>
                 <RadioButtons
                     id="authorEffect"
@@ -542,10 +571,13 @@ export default class Configurator extends React.Component<Props, State> {
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
                     disabled={authorEffectDisabled}
+                    translationDomain={translationDomain}
                     onChange={this.handleChange}
                 />
                 <h3 className={subtitleClassName}>
-                    <FormattedMessage id="Configurator.Color.Title" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Color.Title')}
+                    />
                 </h3>
                 <ColorSelector
                     id="color"
@@ -556,7 +588,9 @@ export default class Configurator extends React.Component<Props, State> {
                 />
 
                 <button type="submit" className={submitButtonClassName}>
-                    <FormattedMessage id="Configurator.Submit" />
+                    <FormattedMessage
+                        id={this.getTranslationId('Configurator.Submit')}
+                    />
                 </button>
             </form>
         );

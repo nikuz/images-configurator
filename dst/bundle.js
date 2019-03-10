@@ -2598,7 +2598,8 @@ function (_React$Component) {
           active = _this$props2.active,
           className = _this$props2.className,
           itemsClassName = _this$props2.itemsClassName,
-          disabled = _this$props2.disabled;
+          disabled = _this$props2.disabled,
+          translationDomain = _this$props2.translationDomain;
       var containerClassName = classnames_default()('configurator-radio-buttons', className);
       return external_react_default.a.createElement("ul", {
         className: containerClassName
@@ -2608,7 +2609,7 @@ function (_React$Component) {
           key: item.id,
           className: itemClassName
         }, item.text && external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-          id: item.text
+          id: translationDomain ? "".concat(translationDomain, ".").concat(item.text) : item.text
         }), item.icon && external_react_default.a.createElement(Icon, {
           src: item.icon,
           className: "configurator-radio-buttons-icon"
@@ -3225,6 +3226,11 @@ function (_React$Component) {
       });
     });
 
+    src_defineProperty(src_assertThisInitialized(_this), "getTranslationId", function (id) {
+      var translationDomain = _this.props.translationDomain;
+      return "".concat(translationDomain ? "".concat(translationDomain, ".") : '').concat(id);
+    });
+
     src_defineProperty(src_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
       var _this$state = _this.state,
@@ -3300,7 +3306,8 @@ function (_React$Component) {
           fontSelectorClassName = _this$props2.fontSelectorClassName,
           fontSelectorItemClassName = _this$props2.fontSelectorItemClassName,
           textEffectDisabled = _this$props2.textEffectDisabled,
-          authorEffectDisabled = _this$props2.authorEffectDisabled;
+          authorEffectDisabled = _this$props2.authorEffectDisabled,
+          translationDomain = _this$props2.translationDomain;
       var _this$state2 = this.state,
           imageFilter = _this$state2.imageFilter,
           imageFilters = _this$state2.imageFilters,
@@ -3343,29 +3350,31 @@ function (_React$Component) {
       }, external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Image-Filter.Title"
+        id: this.getTranslationId('Configurator.Image-Filter.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "imageFilter",
         items: imageFilters,
         active: imageFilter,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Overlay.Title"
+        id: this.getTranslationId('Configurator.Overlay.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "overlay",
         items: overlays,
         active: overlay,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Quote-Text.Title"
+        id: this.getTranslationId('Configurator.Quote-Text.Title')
       })), external_react_default.a.createElement("div", {
         className: "configurator-text-container"
       }, external_react_default.a.createElement("textarea", {
@@ -3389,6 +3398,7 @@ function (_React$Component) {
         active: textAlign,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textVerticalAlign",
@@ -3396,11 +3406,12 @@ function (_React$Component) {
         active: textVerticalAlign,
         className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }))), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Quote-Text-Animation.Title"
+        id: this.getTranslationId('Configurator.Quote-Text-Animation.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textEffect",
         items: textEffects,
@@ -3408,22 +3419,24 @@ function (_React$Component) {
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
         disabled: textEffectDisabled,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Separator.Title"
+        id: this.getTranslationId('Configurator.Separator.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "separator",
         items: separators,
         active: separator,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Author-Text.Title"
+        id: this.getTranslationId('Configurator.Author-Text.Title')
       })), external_react_default.a.createElement("div", {
         className: "configurator-text-container"
       }, external_react_default.a.createElement("input", {
@@ -3448,6 +3461,7 @@ function (_React$Component) {
         active: authorAlign,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorVerticalAlign",
@@ -3455,11 +3469,12 @@ function (_React$Component) {
         active: authorVerticalAlign,
         className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
         itemsClassName: radioButtonItemClassName,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }))), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Author-Text-Animation.Title"
+        id: this.getTranslationId('Configurator.Author-Text-Animation.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorEffect",
         items: authorEffects,
@@ -3467,11 +3482,12 @@ function (_React$Component) {
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
         disabled: authorEffectDisabled,
+        translationDomain: translationDomain,
         onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Color.Title"
+        id: this.getTranslationId('Configurator.Color.Title')
       })), external_react_default.a.createElement(color_selector_ColorSelector, {
         id: "color",
         active: color,
@@ -3482,7 +3498,7 @@ function (_React$Component) {
         type: "submit",
         className: submitButtonClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
-        id: "Configurator.Submit"
+        id: this.getTranslationId('Configurator.Submit')
       })));
     }
   }]);

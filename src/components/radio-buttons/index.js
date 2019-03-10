@@ -17,6 +17,7 @@ type Props = {
     disabled?: boolean,
     className?: string | { [className: string]: * },
     itemsClassName?: string | { [className: string]: * },
+    translationDomain?: string,
     onChange: (data: ChangePayload) => *,
 };
 
@@ -46,6 +47,7 @@ export default class RadioButtons extends React.Component<Props> {
             className,
             itemsClassName,
             disabled,
+            translationDomain,
         } = this.props;
         const containerClassName = cn('configurator-radio-buttons', className);
 
@@ -65,7 +67,9 @@ export default class RadioButtons extends React.Component<Props> {
                             className={itemClassName}
                         >
                             { item.text && (
-                                <FormattedMessage id={item.text} />
+                                <FormattedMessage id={
+                                    translationDomain ? `${translationDomain}.${item.text}` : item.text
+                                } />
                             ) }
                             { item.icon && (
                                 <Icon
