@@ -36,7 +36,7 @@
 
 .configurator-input {
     width: 100%;
-    height: 30px;
+    height: 40px;
     padding: 2px 5px;
     margin-bottom: 5px;
     box-sizing: border-box;
@@ -66,5 +66,5 @@
     text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    outline: none;
+    outline: none!important;
 }

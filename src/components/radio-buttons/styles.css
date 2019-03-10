@@ -5,6 +5,7 @@
     list-style: none;
     display: flex;
     user-select: none;
+    box-sizing: content-box;
 }
 
 .configurator-radio-buttons-item {

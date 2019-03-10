@@ -8,6 +8,7 @@ import type {
     ChangePayload,
 } from '../../types';
 import './styles.css';
+import ReactDOM from "react-dom";
 
 type Props = {
     id: string,
@@ -29,6 +30,8 @@ export default class FontSelector extends React.Component<Props, State> {
 
     tooltipEl: ?HTMLElement;
 
+    containerEl: ?HTMLElement;
+
     componentDidMount(): void {
         window.addEventListener('resize', this.handleResize);
     }
@@ -46,11 +49,13 @@ export default class FontSelector extends React.Component<Props, State> {
     handleResize = () => {
         const { opened } = this.state;
         const tooltipEl = this.tooltipEl;
-        if (!opened || !tooltipEl) {
+        const containerEl = this.containerEl;
+        if (!opened || !tooltipEl || !containerEl) {
             return;
         }
 
         const rect = tooltipEl.getBoundingClientRect();
+        const containerRect = containerEl.getBoundingClientRect();
         const wh = window.innerHeight;
         const ww = window.innerWidth;
         let rh = rect.height;
@@ -67,7 +72,7 @@ export default class FontSelector extends React.Component<Props, State> {
             rw = ww;
         }
 
-        const hCenterPosition = rect.top - (rh / 2);
+        const hCenterPosition = containerRect.top - (rh / 2);
         let top = hCenterPosition;
         if (hCenterPosition < 0 || hCenterPosition < window.scrollY) {
             top = window.scrollY;
@@ -76,7 +81,7 @@ export default class FontSelector extends React.Component<Props, State> {
         }
         tooltipEl.style.top = `${top}px`;
 
-        const wCenterPosition = rect.left - (rw / 2);
+        const wCenterPosition = containerRect.left - (rw / 2);
         let left = window.scrollX + wCenterPosition;
         if (wCenterPosition < 0 || wCenterPosition < window.scrollX) {
             left = window.scrollX;
@@ -143,26 +148,33 @@ export default class FontSelector extends React.Component<Props, State> {
     };
 
     renderTooltip = () => {
+        const body = document.body;
+        if (!body) {
+            return null;
+        }
         const { fonts } = this.props;
         const { opened } = this.state;
         if (!opened) {
             return null;
         }
 
-        return [
-            <div
-                key="blocker"
-                className="configurator-font-selector-blocker"
-                onClick={this.handleClose}
-            />,
-            <div
-                key="tooltip"
-                ref={el => this.tooltipEl = el}
-                className="configurator-font-selector-tooltip"
-            >
-                {fonts.map(this.renderFontItem)}
-            </div>,
-        ];
+        return ReactDOM.createPortal(
+            [
+                <div
+                    key="blocker"
+                    className="configurator-font-selector-blocker"
+                    onClick={this.handleClose}
+                />,
+                <div
+                    key="tooltip"
+                    ref={el => this.tooltipEl = el}
+                    className="configurator-font-selector-tooltip"
+                >
+                    {fonts.map(this.renderFontItem)}
+                </div>,
+            ],
+            body
+        );
     };
 
     render() {
@@ -174,7 +186,10 @@ export default class FontSelector extends React.Component<Props, State> {
         const activeFont = this.getActiveFont();
 
         return (
-            <div className={containerClassName}>
+            <div
+                className={containerClassName}
+                ref={el => this.containerEl = el}
+            >
                 <div
                     className="configurator-font-selector"
                     onClick={this.handleOpen}

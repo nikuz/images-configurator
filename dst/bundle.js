@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1595,7 +1595,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(10);
+var	fixUrls = __webpack_require__(11);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1957,10 +1957,16 @@ module.exports = g;
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom");
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(9);
+var content = __webpack_require__(10);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1981,7 +1987,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -1991,7 +1997,7 @@ exports.push([module.i, "\nuse {\n    fill: currentColor;\n    stroke: currentCo
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 
@@ -2086,11 +2092,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(12);
+var content = __webpack_require__(13);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2109,23 +2115,23 @@ var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(false);
-// Module
-exports.push([module.i, "\n.configurator-radio-buttons {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    user-select: none;\n}\n\n.configurator-radio-buttons-item {\n    position: relative;\n    overflow: hidden;\n    padding: 6px 12px;\n    margin-left: -1px;\n    font-size: 18px;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    color: #333;\n    cursor: pointer;\n}\n\n.configurator-radio-buttons-item:first-child {\n    border-radius: 4px 0 0 4px;\n}\n\n.configurator-radio-buttons-item:last-child {\n    border-radius: 0 4px 4px 0;\n}\n\n.configurator-radio-buttons-item:hover,\n.configurator-radio-buttons-item.active {\n    background-color: var(--gray-light);\n    border-color: var(--gray-dark);\n}\n\n.configurator-radio-buttons-item.active {\n    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n}\n\n.configurator-radio-buttons-item.disabled {\n    color: var(--gray);\n    background-color: var(--white);\n    border-color: var(--gray);\n    box-shadow: none;\n    cursor: default;\n}\n\n.configurator-radio-buttons-item.no-text {\n    font-size: 0;\n    padding: 6px 15px;\n    display: flex;\n    align-items: center;\n}\n\n.configurator-radio-buttons-icon {\n    width: 25px;\n    height: 25px;\n}\n\n.configurator-radio-buttons-blocker {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 10;\n}\n", ""]);
-
-
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
+exports = module.exports = __webpack_require__(5)(false);
+// Module
+exports.push([module.i, "\n.configurator-radio-buttons {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    user-select: none;\n    box-sizing: content-box;\n}\n\n.configurator-radio-buttons-item {\n    position: relative;\n    overflow: hidden;\n    padding: 6px 12px;\n    margin-left: -1px;\n    font-size: 18px;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    color: #333;\n    cursor: pointer;\n}\n\n.configurator-radio-buttons-item:first-child {\n    border-radius: 4px 0 0 4px;\n}\n\n.configurator-radio-buttons-item:last-child {\n    border-radius: 0 4px 4px 0;\n}\n\n.configurator-radio-buttons-item:hover,\n.configurator-radio-buttons-item.active {\n    background-color: var(--gray-light);\n    border-color: var(--gray-dark);\n}\n\n.configurator-radio-buttons-item.active {\n    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n}\n\n.configurator-radio-buttons-item.disabled {\n    color: var(--gray);\n    background-color: var(--white);\n    border-color: var(--gray);\n    box-shadow: none;\n    cursor: default;\n}\n\n.configurator-radio-buttons-item.no-text {\n    font-size: 0;\n    padding: 6px 15px;\n    display: flex;\n    align-items: center;\n}\n\n.configurator-radio-buttons-icon {\n    width: 25px;\n    height: 25px;\n}\n\n.configurator-radio-buttons-blocker {\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 10;\n}\n", ""]);
 
-var content = __webpack_require__(14);
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(15);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2146,7 +2152,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -2156,11 +2162,11 @@ exports.push([module.i, "\n.configurator-font-selector-container {\n    margin-r
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(16);
+var content = __webpack_require__(17);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2179,23 +2185,23 @@ var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(false);
-// Module
-exports.push([module.i, "\n.configurator-color-selector {\n    width: 225px;\n    background: #FFF;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 12px;\n    border-radius: 4px;\n    position: relative;\n    padding: 5px;\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.configurator-color-selector-item {\n    width: 25px;\n    height: 25px;\n    cursor: pointer;\n}\n\n.configurator-color-selector-item-wrap:hover,\n.configurator-color-selector-item.active {\n    position: relative;\n    outline: 2px solid #FFF;\n    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);\n    z-index: 2;\n}\n", ""]);
-
-
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
+exports = module.exports = __webpack_require__(5)(false);
+// Module
+exports.push([module.i, "\n.configurator-color-selector {\n    width: 225px;\n    background: #FFF;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 12px;\n    border-radius: 4px;\n    box-sizing: content-box;\n    position: relative;\n    padding: 5px;\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.configurator-color-selector-item {\n    width: 25px;\n    height: 25px;\n    cursor: pointer;\n}\n\n.configurator-color-selector-item-wrap:hover,\n.configurator-color-selector-item.active {\n    position: relative;\n    outline: 2px solid #FFF;\n    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);\n    z-index: 2;\n}\n", ""]);
 
-var content = __webpack_require__(18);
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(19);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2216,17 +2222,17 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
 // Module
-exports.push([module.i, ":root {\n    --white: #FFF;\n    --gray: #CCC;\n    --gray-light: #E6E6E6;\n    --gray-dark: #ADADAD;\n    --blue: #1A5888;\n}\n\n.configurator-container {\n    margin-bottom: 20px;\n}\n\n.configurator-subtitle {\n    font-size: 20px;\n    margin: 20px 0 10px;\n    font-weight: 700;\n    color: #555;\n}\n\n.configurator-text-container {\n    display: inline-block;\n}\n\n.configurator-textarea {\n    width: 100%;\n    height: 100px;\n    max-height: 200px;\n    max-width: 600px;\n    min-width: 500px;\n    min-height: 50px;\n    padding: 2px 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-input {\n    width: 100%;\n    height: 30px;\n    padding: 2px 5px;\n    margin-bottom: 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-text-container-footer {\n    display: flex;\n    justify-content: space-between;\n}\n\n.configurator-text-vertical-align {\n    margin-left: 20px;\n}\n\n.configurator-submit {\n    margin-top: 20px;\n    height: 80px;\n    padding: 0 40px;\n    background-color: var(--blue);\n    color: var(--white);\n    border-radius: 20px;\n    font-size: 24px;\n    font-weight: bold;\n    cursor: pointer;\n    text-transform: uppercase;\n    -webkit-tap-highlight-color: transparent;\n    user-select: none;\n    outline: none;\n}\n", ""]);
+exports.push([module.i, ":root {\n    --white: #FFF;\n    --gray: #CCC;\n    --gray-light: #E6E6E6;\n    --gray-dark: #ADADAD;\n    --blue: #1A5888;\n}\n\n.configurator-container {\n    margin-bottom: 20px;\n}\n\n.configurator-subtitle {\n    font-size: 20px;\n    margin: 20px 0 10px;\n    font-weight: 700;\n    color: #555;\n}\n\n.configurator-text-container {\n    display: inline-block;\n}\n\n.configurator-textarea {\n    width: 100%;\n    height: 100px;\n    max-height: 200px;\n    max-width: 600px;\n    min-width: 500px;\n    min-height: 50px;\n    padding: 2px 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-input {\n    width: 100%;\n    height: 40px;\n    padding: 2px 5px;\n    margin-bottom: 5px;\n    box-sizing: border-box;\n    border: 1px solid var(--gray);\n    font-size: 16px;\n}\n\n.configurator-text-container-footer {\n    display: flex;\n    justify-content: space-between;\n}\n\n.configurator-text-vertical-align {\n    margin-left: 20px;\n}\n\n.configurator-submit {\n    margin-top: 20px;\n    height: 80px;\n    padding: 0 40px;\n    background-color: var(--blue);\n    color: var(--white);\n    border-radius: 20px;\n    font-size: 24px;\n    font-weight: bold;\n    cursor: pointer;\n    text-transform: uppercase;\n    -webkit-tap-highlight-color: transparent;\n    user-select: none;\n    outline: none!important;\n}\n", ""]);
 
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2505,7 +2511,7 @@ var vertical_bottom_result = browser_sprite_build_default.a.add(vertical_bottom_
 
 
 // EXTERNAL MODULE: ./src/components/icon/style.css
-var icon_style = __webpack_require__(8);
+var icon_style = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./src/components/icon/index.js
 
@@ -2525,7 +2531,7 @@ function Icon(props) {
   }));
 }
 // EXTERNAL MODULE: ./src/components/radio-buttons/styles.css
-var styles = __webpack_require__(11);
+var styles = __webpack_require__(12);
 
 // CONCATENATED MODULE: ./src/components/radio-buttons/index.js
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2632,7 +2638,11 @@ _defineProperty(radio_buttons_RadioButtons, "defaultProps", {
 
 
 // EXTERNAL MODULE: ./src/components/font-selector/styles.css
-var font_selector_styles = __webpack_require__(13);
+var font_selector_styles = __webpack_require__(14);
+
+// EXTERNAL MODULE: external "react-dom"
+var external_react_dom_ = __webpack_require__(8);
+var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
 
 // CONCATENATED MODULE: ./src/components/font-selector/index.js
 function font_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { font_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { font_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return font_selector_typeof(obj); }
@@ -2654,6 +2664,7 @@ function font_selector_inherits(subClass, superClass) { if (typeof superClass !=
 function font_selector_setPrototypeOf(o, p) { font_selector_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return font_selector_setPrototypeOf(o, p); }
 
 function font_selector_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2684,15 +2695,19 @@ function (_React$Component) {
 
     font_selector_defineProperty(font_selector_assertThisInitialized(_this), "tooltipEl", void 0);
 
+    font_selector_defineProperty(font_selector_assertThisInitialized(_this), "containerEl", void 0);
+
     font_selector_defineProperty(font_selector_assertThisInitialized(_this), "handleResize", function () {
       var opened = _this.state.opened;
       var tooltipEl = _this.tooltipEl;
+      var containerEl = _this.containerEl;
 
-      if (!opened || !tooltipEl) {
+      if (!opened || !tooltipEl || !containerEl) {
         return;
       }
 
       var rect = tooltipEl.getBoundingClientRect();
+      var containerRect = containerEl.getBoundingClientRect();
       var wh = window.innerHeight;
       var ww = window.innerWidth;
       var rh = rect.height;
@@ -2710,7 +2725,7 @@ function (_React$Component) {
         rw = ww;
       }
 
-      var hCenterPosition = rect.top - rh / 2;
+      var hCenterPosition = containerRect.top - rh / 2;
       var top = hCenterPosition;
 
       if (hCenterPosition < 0 || hCenterPosition < window.scrollY) {
@@ -2720,7 +2735,7 @@ function (_React$Component) {
       }
 
       tooltipEl.style.top = "".concat(top, "px");
-      var wCenterPosition = rect.left - rw / 2;
+      var wCenterPosition = containerRect.left - rw / 2;
       var left = window.scrollX + wCenterPosition;
 
       if (wCenterPosition < 0 || wCenterPosition < window.scrollX) {
@@ -2783,6 +2798,12 @@ function (_React$Component) {
     });
 
     font_selector_defineProperty(font_selector_assertThisInitialized(_this), "renderTooltip", function () {
+      var body = document.body;
+
+      if (!body) {
+        return null;
+      }
+
       var fonts = _this.props.fonts;
       var opened = _this.state.opened;
 
@@ -2790,7 +2811,7 @@ function (_React$Component) {
         return null;
       }
 
-      return [external_react_default.a.createElement("div", {
+      return external_react_dom_default.a.createPortal([external_react_default.a.createElement("div", {
         key: "blocker",
         className: "configurator-font-selector-blocker",
         onClick: _this.handleClose
@@ -2800,7 +2821,7 @@ function (_React$Component) {
           return _this.tooltipEl = el;
         },
         className: "configurator-font-selector-tooltip"
-      }, fonts.map(_this.renderFontItem))];
+      }, fonts.map(_this.renderFontItem))], body);
     });
 
     return _this;
@@ -2826,11 +2847,16 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var className = this.props.className;
       var containerClassName = classnames_default()('configurator-font-selector-container', className);
       var activeFont = this.getActiveFont();
       return external_react_default.a.createElement("div", {
-        className: containerClassName
+        className: containerClassName,
+        ref: function ref(el) {
+          return _this2.containerEl = el;
+        }
       }, external_react_default.a.createElement("div", {
         className: "configurator-font-selector",
         onClick: this.handleOpen
@@ -2851,7 +2877,7 @@ function (_React$Component) {
 
 
 // EXTERNAL MODULE: ./src/components/color-selector/styles.css
-var color_selector_styles = __webpack_require__(15);
+var color_selector_styles = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./src/components/color-selector/index.js
 function color_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { color_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { color_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return color_selector_typeof(obj); }
@@ -2999,7 +3025,7 @@ function (_React$Component) {
 
 
 // EXTERNAL MODULE: ./src/styles.css
-var src_styles = __webpack_require__(17);
+var src_styles = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return src_Configurator; });
