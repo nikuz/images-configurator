@@ -94,14 +94,26 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'blur',
             text: 'Configurator.Image-Filter.Blur',
         }, {
-            id: 'bw',
+            id: 'grayscale',
             text: 'Configurator.Image-Filter.BW',
         }, {
-            id: 'Sepia',
+            id: 'sepia',
             text: 'Configurator.Image-Filter.Sepia',
         }, {
-            id: 'Pixelate',
+            id: 'pixelate',
             text: 'Configurator.Image-Filter.Pixelate',
+        }, {
+            id: 'spread',
+            text: 'Configurator.Image-Filter.Spread',
+        }, {
+            id: 'swirl',
+            text: 'Configurator.Image-Filter.Swirl',
+        }, {
+            id: 'paint',
+            text: 'Configurator.Image-Filter.Paint',
+        }, {
+            id: 'raise',
+            text: 'Configurator.Image-Filter.Raise',
         }],
         overlays: [{
             id: 'none',
