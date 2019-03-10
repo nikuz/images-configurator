@@ -3070,7 +3070,7 @@ function (_React$Component) {
     _this = src_possibleConstructorReturn(this, src_getPrototypeOf(Configurator).call(this, props));
 
     src_defineProperty(src_assertThisInitialized(_this), "state", {
-      imageFilters: [{
+      filters: [{
         id: 'none',
         text: 'Configurator.Image-Filter.None'
       }, {
@@ -3258,7 +3258,7 @@ function (_React$Component) {
     src_defineProperty(src_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
       var _this$state = _this.state,
-          imageFilter = _this$state.imageFilter,
+          filter = _this$state.filter,
           overlay = _this$state.overlay,
           text = _this$state.text,
           textFontFamily = _this$state.textFontFamily,
@@ -3277,7 +3277,7 @@ function (_React$Component) {
           authorEffectDisabled = _this$props.authorEffectDisabled;
 
       _this.props.onSubmit({
-        imageFilter: imageFilter,
+        filter: filter,
         overlay: overlay,
         text: text,
         textFontFamily: textFontFamily,
@@ -3297,8 +3297,8 @@ function (_React$Component) {
 
     var state = _this.state;
     _this.state = _objectSpread({}, _this.state, {
-      imageFilter: props.imageFilter || state.imageFilter || 'none',
-      imageFilters: state.imageFilters.concat(props.imageFilters || []),
+      filter: props.filter || state.filter || 'none',
+      filters: state.filters.concat(props.filters || []),
       overlay: props.overlay || state.overlay || 'none',
       overlays: state.overlays.concat(props.overlays || []),
       text: props.text || state.text || '',
@@ -3333,8 +3333,8 @@ function (_React$Component) {
           authorEffectDisabled = _this$props2.authorEffectDisabled,
           translationDomain = _this$props2.translationDomain;
       var _this$state2 = this.state,
-          imageFilter = _this$state2.imageFilter,
-          imageFilters = _this$state2.imageFilters,
+          filter = _this$state2.filter,
+          filters = _this$state2.filters,
           overlay = _this$state2.overlay,
           overlays = _this$state2.overlays,
           text = _this$state2.text,
@@ -3376,9 +3376,9 @@ function (_React$Component) {
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
         id: this.getTranslationId('Configurator.Image-Filter.Title')
       })), external_react_default.a.createElement(radio_buttons_RadioButtons, {
-        id: "imageFilter",
-        items: imageFilters,
-        active: imageFilter,
+        id: "filter",
+        items: filters,
+        active: filter,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
         translationDomain: translationDomain,

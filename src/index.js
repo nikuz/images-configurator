@@ -13,7 +13,7 @@ import type {
 import './styles.css';
 
 type SubmitData = {
-    imageFilter: string,
+    filter: string,
     overlay: string,
     textFontFamily: string,
     textAlign: string,
@@ -29,7 +29,7 @@ type SubmitData = {
 };
 
 type Props = {
-    imageFilter?: string,
+    filter?: string,
     overlay?: string,
     text: string,
     textFontFamily?: string,
@@ -62,8 +62,8 @@ type Props = {
 };
 
 export type State = {
-    imageFilter?: string,
-    imageFilters: Item[],
+    filter?: string,
+    filters: Item[],
     overlay?: string,
     overlays: Item[],
     textFontFamily: string,
@@ -84,7 +84,7 @@ export default class Configurator extends React.Component<Props, State> {
     };
 
     state = {
-        imageFilters: [{
+        filters: [{
             id: 'none',
             text: 'Configurator.Image-Filter.None',
         }, {
@@ -248,8 +248,8 @@ export default class Configurator extends React.Component<Props, State> {
 
         this.state = {
             ...this.state,
-            imageFilter: props.imageFilter || state.imageFilter || 'none',
-            imageFilters: state.imageFilters.concat(props.imageFilters || []),
+            filter: props.filter || state.filter || 'none',
+            filters: state.filters.concat(props.filters || []),
             overlay: props.overlay || state.overlay || 'none',
             overlays: state.overlays.concat(props.overlays || []),
             text: props.text || state.text || '',
@@ -303,7 +303,7 @@ export default class Configurator extends React.Component<Props, State> {
         e.preventDefault();
 
         const {
-            imageFilter,
+            filter,
             overlay,
             text,
             textFontFamily,
@@ -324,7 +324,7 @@ export default class Configurator extends React.Component<Props, State> {
         } = this.props;
 
         this.props.onSubmit({
-            imageFilter,
+            filter,
             overlay,
             text,
             textFontFamily,
@@ -355,8 +355,8 @@ export default class Configurator extends React.Component<Props, State> {
             translationDomain,
         } = this.props;
         const {
-            imageFilter,
-            imageFilters,
+            filter,
+            filters,
             overlay,
             overlays,
             text,
@@ -416,9 +416,9 @@ export default class Configurator extends React.Component<Props, State> {
                     />
                 </h3>
                 <RadioButtons
-                    id="imageFilter"
-                    items={imageFilters}
-                    active={imageFilter}
+                    id="filter"
+                    items={filters}
+                    active={filter}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
                     translationDomain={translationDomain}
