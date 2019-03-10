@@ -1,14 +1,14 @@
 {
   "name": "@nikuz/images-configurator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "files": [
     "dst"
   ],
   "main": "dst/bundle.js",
   "scripts": {
-    "flow-typed": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install redux@4.x.x classnames@2.x.x && npm run create-stub",
-    "create-stub": "flow-typed create-stub react-redux @nikuz/images-core",
+    "flow-typed": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install classnames@2.x.x && npm run create-stub",
+    "create-stub": "flow-typed create-stub @nikuz/images-core",
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "eslint": "eslint ./webpack.config.js ./src ./test -f table",
@@ -46,9 +46,6 @@
     "react": "16.8.1",
     "react-dom": "16.8.1",
     "react-intl": "2.8.0",
-    "react-redux": "6.0.0",
-    "redux": "4.0.1",
-    "redux-logger": "3.0.6",
     "style-loader": "0.23.1",
     "svg-sprite-loader": "^4.1.3",
     "url-loader": "1.1.2",
@@ -60,8 +57,6 @@
     "@nikuz/images-core": "*",
     "react": ">=16.8.1",
     "react-dom": ">=16.8.1",
-    "react-intl": ">=2.8.0",
-    "react-redux": ">=6.0.0",
-    "redux": ">=4.0.1"
+    "react-intl": ">=2.8.0"
   }
 }

@@ -1,6 +1,5 @@
 // @flow
 
-import { connect } from 'react-redux';
 import React from 'react';
 import ImageRenderer from '@nikuz/images-core';
 import ImageConfigurator from '../src/index';
@@ -30,7 +29,7 @@ const renderProps = {
     color: '#FFF',
 };
 
-class Home extends React.Component<void> {
+export default class Home extends React.Component<void> {
     rendererContainer: ?HTMLElement;
 
     renderImage = (opts: Object) => {
@@ -57,8 +56,6 @@ class Home extends React.Component<void> {
         return [
             <ImageConfigurator
                 key="configurator"
-                textEffectDisabled
-                authorEffectDisabled
                 onSubmit={this.onFilterChange}
             />,
             <div key="canvas" ref={el => this.rendererContainer = el} />,
@@ -66,11 +63,3 @@ class Home extends React.Component<void> {
     }
 }
 
-const mapStateToProps = () => ({
-
-});
-
-const mapDispatchToProps = ({
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);

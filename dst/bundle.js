@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 20);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1595,7 +1595,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(11);
+var	fixUrls = __webpack_require__(10);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1957,16 +1957,10 @@ module.exports = g;
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(10);
+var content = __webpack_require__(9);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1987,7 +1981,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -1997,7 +1991,7 @@ exports.push([module.i, "\nuse {\n    fill: currentColor;\n    stroke: currentCo
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports) {
 
 
@@ -2092,11 +2086,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(13);
+var content = __webpack_require__(12);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2117,7 +2111,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -2127,11 +2121,11 @@ exports.push([module.i, "\n.configurator-radio-buttons {\n    margin: 0;\n    pa
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(15);
+var content = __webpack_require__(14);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2152,7 +2146,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -2162,11 +2156,11 @@ exports.push([module.i, "\n.configurator-font-selector-container {\n    margin-r
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(17);
+var content = __webpack_require__(16);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2187,7 +2181,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -2197,11 +2191,11 @@ exports.push([module.i, "\n.configurator-color-selector {\n    width: 225px;\n  
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(19);
+var content = __webpack_require__(18);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2222,7 +2216,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -2232,7 +2226,7 @@ exports.push([module.i, ":root {\n    --white: #FFF;\n    --gray: #CCC;\n    --g
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2242,9 +2236,6 @@ __webpack_require__.r(__webpack_exports__);
 var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
-// EXTERNAL MODULE: external "react-redux"
-var external_react_redux_ = __webpack_require__(8);
-
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(3);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
@@ -2252,185 +2243,6 @@ var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 // EXTERNAL MODULE: external "react-intl"
 var external_react_intl_ = __webpack_require__(4);
 
-// CONCATENATED MODULE: ./src/constants.js
-var CONFIGURATOR_CHANGE = 'CONFIGURATOR_CHANGE';
-// CONCATENATED MODULE: ./src/reducer.js
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-var initialState = {
-  imageFilters: [{
-    id: 'none',
-    text: 'Configurator.Image-Filter.None'
-  }, {
-    id: 'shade',
-    text: 'Configurator.Image-Filter.Shade'
-  }, {
-    id: 'blur',
-    text: 'Configurator.Image-Filter.Blur'
-  }, {
-    id: 'bw',
-    text: 'Configurator.Image-Filter.BW'
-  }, {
-    id: 'Sepia',
-    text: 'Configurator.Image-Filter.Sepia'
-  }, {
-    id: 'Pixelate',
-    text: 'Configurator.Image-Filter.Pixelate'
-  }],
-  overlays: [{
-    id: 'none',
-    text: 'Configurator.Overlay.None'
-  }, {
-    id: 'solid',
-    text: 'Configurator.Overlay.Solid'
-  }, {
-    id: 'border',
-    text: 'Configurator.Overlay.Border'
-  }, {
-    id: 'lines',
-    text: 'Configurator.Overlay.Lines'
-  }],
-  text: 'There is no elevator to success, you have to take the stairs.',
-  textFontFamily: 'Courgette',
-  textAlign: 'center',
-  textVerticalAlign: 'center',
-  textEffect: 'type',
-  textEffects: [{
-    id: 'type',
-    text: 'Configurator.Quote-Text-Animation.Type'
-  }, {
-    id: 'fade-letters',
-    text: 'Configurator.Quote-Text-Animation.Fade-Letters'
-  }, {
-    id: 'fade-lines',
-    text: 'Configurator.Quote-Text-Animation.Fade-Lines'
-  }, {
-    id: 'slide-lines',
-    text: 'Configurator.Quote-Text-Animation.Slide-Lines'
-  }, {
-    id: 'append-lines',
-    text: 'Configurator.Quote-Text-Animation.Append-Lines'
-  }, {
-    id: 'fade',
-    text: 'Configurator.Quote-Text-Animation.Fade'
-  }],
-  textVerticalAligns: [{
-    id: 'top',
-    icon: 'vertical-top'
-  }, {
-    id: 'center',
-    icon: 'vertical-center'
-  }, {
-    id: 'bottom',
-    icon: 'vertical-bottom'
-  }],
-  separators: [{
-    id: 'none',
-    text: 'Configurator.Separator.None'
-  }, {
-    id: 'line',
-    text: 'Configurator.Separator.Ndash'
-  }, {
-    id: 'dash',
-    text: 'Configurator.Separator.Dashes'
-  }, {
-    id: 'dot',
-    text: 'Configurator.Separator.Dots'
-  }],
-  author: 'Quote Author',
-  authorFontFamily: 'Lobster',
-  authorAlign: 'center',
-  authorVerticalAlign: '',
-  authorVerticalAligns: [{
-    id: 'stick',
-    icon: 'vertical-top'
-  }, {
-    id: 'bottom',
-    icon: 'vertical-bottom'
-  }],
-  authorEffect: 'fade',
-  authorEffects: [{
-    id: 'type',
-    text: 'Configurator.Author-Text-Animation.Type'
-  }, {
-    id: 'slide',
-    text: 'Configurator.Author-Text-Animation.Slide'
-  }, {
-    id: 'fade',
-    text: 'Configurator.Author-Text-Animation.Fade'
-  }],
-  fonts: [{
-    id: 'Typograph',
-    icon: 'typograph'
-  }, {
-    id: 'Tahoma',
-    icon: 'tahoma'
-  }, {
-    id: 'Lobster',
-    icon: 'lobster'
-  }, {
-    id: 'Sports',
-    icon: 'sports'
-  }, {
-    id: 'Courgette',
-    icon: 'courgette'
-  }, {
-    id: 'Sensei',
-    icon: 'sensei'
-  }, {
-    id: 'GreatVibes',
-    icon: 'greatvibes'
-  }, {
-    id: 'Guerilla',
-    icon: 'guerilla'
-  }, {
-    id: 'Kaushan',
-    icon: 'kaushan'
-  }, {
-    id: 'Exo',
-    icon: 'exo'
-  }, {
-    id: 'YellowTail',
-    icon: 'yellowtail'
-  }, {
-    id: 'MyUnderwood',
-    icon: 'myunderwood'
-  }, {
-    id: 'NickAinley',
-    icon: 'nickainley'
-  }, {
-    id: 'Lato',
-    icon: 'lato'
-  }],
-  aligns: [{
-    id: 'left',
-    icon: 'align-left'
-  }, {
-    id: 'center',
-    icon: 'align-center'
-  }, {
-    id: 'right',
-    icon: 'align-right'
-  }],
-  color: '#FFFFFF'
-};
-function configurator() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-  var type = action.type,
-      payload = action.payload;
-
-  switch (type) {
-    case CONFIGURATOR_CHANGE:
-      return _objectSpread({}, state, _defineProperty({}, payload.id, payload.value));
-
-    default:
-      return state;
-  }
-}
 // EXTERNAL MODULE: ./node_modules/svg-baker-runtime/browser-symbol.js
 var browser_symbol = __webpack_require__(1);
 var browser_symbol_default = /*#__PURE__*/__webpack_require__.n(browser_symbol);
@@ -2693,7 +2505,7 @@ var vertical_bottom_result = browser_sprite_build_default.a.add(vertical_bottom_
 
 
 // EXTERNAL MODULE: ./src/components/icon/style.css
-var icon_style = __webpack_require__(9);
+var icon_style = __webpack_require__(8);
 
 // CONCATENATED MODULE: ./src/components/icon/index.js
 
@@ -2713,7 +2525,7 @@ function Icon(props) {
   }));
 }
 // EXTERNAL MODULE: ./src/components/radio-buttons/styles.css
-var styles = __webpack_require__(12);
+var styles = __webpack_require__(11);
 
 // CONCATENATED MODULE: ./src/components/radio-buttons/index.js
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2734,7 +2546,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function radio_buttons_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -2760,7 +2572,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(RadioButtons)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    radio_buttons_defineProperty(_assertThisInitialized(_this), "handleChoose", function (item) {
+    _defineProperty(_assertThisInitialized(_this), "handleChoose", function (item) {
       var _this$props = _this.props,
           id = _this$props.id,
           disabled = _this$props.disabled;
@@ -2813,13 +2625,13 @@ function (_React$Component) {
   return RadioButtons;
 }(external_react_default.a.Component);
 
-radio_buttons_defineProperty(radio_buttons_RadioButtons, "defaultProps", {
+_defineProperty(radio_buttons_RadioButtons, "defaultProps", {
   disabled: false
 });
 
 
 // EXTERNAL MODULE: ./src/components/font-selector/styles.css
-var font_selector_styles = __webpack_require__(14);
+var font_selector_styles = __webpack_require__(13);
 
 // CONCATENATED MODULE: ./src/components/font-selector/index.js
 function font_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { font_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { font_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return font_selector_typeof(obj); }
@@ -3038,7 +2850,7 @@ function (_React$Component) {
 
 
 // EXTERNAL MODULE: ./src/components/color-selector/styles.css
-var color_selector_styles = __webpack_require__(16);
+var color_selector_styles = __webpack_require__(15);
 
 // CONCATENATED MODULE: ./src/components/color-selector/index.js
 function color_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { color_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { color_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return color_selector_typeof(obj); }
@@ -3185,20 +2997,14 @@ function (_React$Component) {
 }(external_react_default.a.Component);
 
 
-// CONCATENATED MODULE: ./src/actions.js
-
-var actions_change = function change(data) {
-  return {
-    type: CONFIGURATOR_CHANGE,
-    payload: data
-  };
-};
 // EXTERNAL MODULE: ./src/styles.css
-var src_styles = __webpack_require__(18);
+var src_styles = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./src/index.js
-/* concated harmony reexport configuratorReducer */__webpack_require__.d(__webpack_exports__, "configuratorReducer", function() { return configurator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return src_Configurator; });
 function src_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { src_typeof = function _typeof(obj) { return typeof obj; }; } else { src_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return src_typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { src_defineProperty(target, key, source[key]); }); } return target; }
 
 function src_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3226,32 +3032,194 @@ function src_defineProperty(obj, key, value) { if (key in obj) { Object.definePr
 
 
 
-
-
-
 var src_Configurator =
 /*#__PURE__*/
 function (_React$Component) {
   src_inherits(Configurator, _React$Component);
 
-  function Configurator() {
-    var _getPrototypeOf2;
-
+  function Configurator(props) {
     var _this;
 
     src_classCallCheck(this, Configurator);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    _this = src_possibleConstructorReturn(this, src_getPrototypeOf(Configurator).call(this, props));
 
-    _this = src_possibleConstructorReturn(this, (_getPrototypeOf2 = src_getPrototypeOf(Configurator)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    src_defineProperty(src_assertThisInitialized(_this), "state", {
+      imageFilters: [{
+        id: 'none',
+        text: 'Configurator.Image-Filter.None'
+      }, {
+        id: 'shade',
+        text: 'Configurator.Image-Filter.Shade'
+      }, {
+        id: 'blur',
+        text: 'Configurator.Image-Filter.Blur'
+      }, {
+        id: 'bw',
+        text: 'Configurator.Image-Filter.BW'
+      }, {
+        id: 'Sepia',
+        text: 'Configurator.Image-Filter.Sepia'
+      }, {
+        id: 'Pixelate',
+        text: 'Configurator.Image-Filter.Pixelate'
+      }],
+      overlays: [{
+        id: 'none',
+        text: 'Configurator.Overlay.None'
+      }, {
+        id: 'solid',
+        text: 'Configurator.Overlay.Solid'
+      }, {
+        id: 'border',
+        text: 'Configurator.Overlay.Border'
+      }, {
+        id: 'lines',
+        text: 'Configurator.Overlay.Lines'
+      }],
+      text: 'There is no elevator to success, you have to take the stairs.',
+      textFontFamily: 'Courgette',
+      textAlign: 'center',
+      textVerticalAlign: 'center',
+      textEffect: 'type',
+      textEffects: [{
+        id: 'type',
+        text: 'Configurator.Quote-Text-Animation.Type'
+      }, {
+        id: 'fade-letters',
+        text: 'Configurator.Quote-Text-Animation.Fade-Letters'
+      }, {
+        id: 'fade-lines',
+        text: 'Configurator.Quote-Text-Animation.Fade-Lines'
+      }, {
+        id: 'slide-lines',
+        text: 'Configurator.Quote-Text-Animation.Slide-Lines'
+      }, {
+        id: 'append-lines',
+        text: 'Configurator.Quote-Text-Animation.Append-Lines'
+      }, {
+        id: 'fade',
+        text: 'Configurator.Quote-Text-Animation.Fade'
+      }],
+      textVerticalAligns: [{
+        id: 'top',
+        icon: 'vertical-top'
+      }, {
+        id: 'center',
+        icon: 'vertical-center'
+      }, {
+        id: 'bottom',
+        icon: 'vertical-bottom'
+      }],
+      separators: [{
+        id: 'none',
+        text: 'Configurator.Separator.None'
+      }, {
+        id: 'line',
+        text: 'Configurator.Separator.Ndash'
+      }, {
+        id: 'dash',
+        text: 'Configurator.Separator.Dashes'
+      }, {
+        id: 'dot',
+        text: 'Configurator.Separator.Dots'
+      }],
+      author: 'Quote Author',
+      authorFontFamily: 'Lobster',
+      authorAlign: 'center',
+      authorVerticalAlign: '',
+      authorVerticalAligns: [{
+        id: 'stick',
+        icon: 'vertical-top'
+      }, {
+        id: 'bottom',
+        icon: 'vertical-bottom'
+      }],
+      authorEffect: 'fade',
+      authorEffects: [{
+        id: 'type',
+        text: 'Configurator.Author-Text-Animation.Type'
+      }, {
+        id: 'slide',
+        text: 'Configurator.Author-Text-Animation.Slide'
+      }, {
+        id: 'fade',
+        text: 'Configurator.Author-Text-Animation.Fade'
+      }],
+      fonts: [{
+        id: 'Typograph',
+        icon: 'typograph'
+      }, {
+        id: 'Tahoma',
+        icon: 'tahoma'
+      }, {
+        id: 'Lobster',
+        icon: 'lobster'
+      }, {
+        id: 'Sports',
+        icon: 'sports'
+      }, {
+        id: 'Courgette',
+        icon: 'courgette'
+      }, {
+        id: 'Sensei',
+        icon: 'sensei'
+      }, {
+        id: 'GreatVibes',
+        icon: 'greatvibes'
+      }, {
+        id: 'Guerilla',
+        icon: 'guerilla'
+      }, {
+        id: 'Kaushan',
+        icon: 'kaushan'
+      }, {
+        id: 'Exo',
+        icon: 'exo'
+      }, {
+        id: 'YellowTail',
+        icon: 'yellowtail'
+      }, {
+        id: 'MyUnderwood',
+        icon: 'myunderwood'
+      }, {
+        id: 'NickAinley',
+        icon: 'nickainley'
+      }, {
+        id: 'Lato',
+        icon: 'lato'
+      }],
+      aligns: [{
+        id: 'left',
+        icon: 'align-left'
+      }, {
+        id: 'center',
+        icon: 'align-center'
+      }, {
+        id: 'right',
+        icon: 'align-right'
+      }],
+      color: '#FFFFFF'
+    });
+
+    src_defineProperty(src_assertThisInitialized(_this), "handleChange", function (data) {
+      var onChange = _this.props.onChange;
+
+      _this.setState(src_defineProperty({}, data.id, data.value));
+
+      if (onChange instanceof Function) {
+        _this.props.onChange({
+          id: id,
+          value: value
+        });
+      }
+    });
 
     src_defineProperty(src_assertThisInitialized(_this), "textValueChange", function (e) {
       var id = e.target.id;
       var value = e.target.value;
 
-      _this.props.onChange({
+      _this.handleChange({
         id: id,
         value: value
       });
@@ -3259,23 +3227,24 @@ function (_React$Component) {
 
     src_defineProperty(src_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
+      var _this$state = _this.state,
+          imageFilter = _this$state.imageFilter,
+          overlay = _this$state.overlay,
+          text = _this$state.text,
+          textFontFamily = _this$state.textFontFamily,
+          textAlign = _this$state.textAlign,
+          textVerticalAlign = _this$state.textVerticalAlign,
+          textEffect = _this$state.textEffect,
+          separator = _this$state.separator,
+          author = _this$state.author,
+          authorFontFamily = _this$state.authorFontFamily,
+          authorAlign = _this$state.authorAlign,
+          authorVerticalAlign = _this$state.authorVerticalAlign,
+          authorEffect = _this$state.authorEffect,
+          color = _this$state.color;
       var _this$props = _this.props,
-          imageFilter = _this$props.imageFilter,
-          overlay = _this$props.overlay,
-          text = _this$props.text,
-          textFontFamily = _this$props.textFontFamily,
-          textAlign = _this$props.textAlign,
-          textVerticalAlign = _this$props.textVerticalAlign,
-          textEffect = _this$props.textEffect,
           textEffectDisabled = _this$props.textEffectDisabled,
-          separator = _this$props.separator,
-          author = _this$props.author,
-          authorFontFamily = _this$props.authorFontFamily,
-          authorAlign = _this$props.authorAlign,
-          authorVerticalAlign = _this$props.authorVerticalAlign,
-          authorEffect = _this$props.authorEffect,
-          authorEffectDisabled = _this$props.authorEffectDisabled,
-          color = _this$props.color;
+          authorEffectDisabled = _this$props.authorEffectDisabled;
 
       _this.props.onSubmit({
         imageFilter: imageFilter,
@@ -3296,6 +3265,27 @@ function (_React$Component) {
       });
     });
 
+    var state = _this.state;
+    _this.state = _objectSpread({}, _this.state, {
+      imageFilter: props.imageFilter || state.imageFilter || 'none',
+      imageFilters: state.imageFilters.concat(props.imageFilters || []),
+      overlay: props.overlay || state.overlay || 'none',
+      overlays: state.overlays.concat(props.overlays || []),
+      text: props.text || state.text || '',
+      textFontFamily: props.textFontFamily || state.textFontFamily,
+      textAlign: props.textAlign || state.textAlign,
+      textVerticalAlign: props.textVerticalAlign || state.textVerticalAlign,
+      textEffect: props.textEffect || state.textEffect,
+      textEffects: state.textEffects.concat(props.textEffects || []),
+      separator: props.separator || state.separator || 'none',
+      separators: state.separators.concat(props.separators || []),
+      author: props.author || state.author || '',
+      authorFontFamily: props.authorFontFamily || state.authorFontFamily,
+      authorAlign: props.authorAlign || state.authorAlign,
+      authorVerticalAlign: props.authorVerticalAlign || state.authorVerticalAlign,
+      authorEffect: props.authorEffect || state.authorEffect,
+      authorEffects: state.authorEffects.concat(props.authorEffects || [])
+    });
     return _this;
   }
 
@@ -3303,37 +3293,38 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
-          imageFilter = _this$props2.imageFilter,
-          imageFilters = _this$props2.imageFilters,
-          overlay = _this$props2.overlay,
-          overlays = _this$props2.overlays,
-          text = _this$props2.text,
-          textFontFamily = _this$props2.textFontFamily,
-          textAlign = _this$props2.textAlign,
-          textVerticalAlign = _this$props2.textVerticalAlign,
-          textVerticalAligns = _this$props2.textVerticalAligns,
-          textEffect = _this$props2.textEffect,
-          textEffectDisabled = _this$props2.textEffectDisabled,
-          textEffects = _this$props2.textEffects,
-          separator = _this$props2.separator,
-          separators = _this$props2.separators,
-          author = _this$props2.author,
-          authorFontFamily = _this$props2.authorFontFamily,
-          authorAlign = _this$props2.authorAlign,
-          authorVerticalAlign = _this$props2.authorVerticalAlign,
-          authorVerticalAligns = _this$props2.authorVerticalAligns,
-          authorEffect = _this$props2.authorEffect,
-          authorEffectDisabled = _this$props2.authorEffectDisabled,
-          authorEffects = _this$props2.authorEffects,
-          fonts = _this$props2.fonts,
-          aligns = _this$props2.aligns,
-          color = _this$props2.color,
           radioButtonClassName = _this$props2.radioButtonClassName,
           radioButtonItemClassName = _this$props2.radioButtonItemClassName,
           colorSelectorClassName = _this$props2.colorSelectorClassName,
           colorSelectorItemClassName = _this$props2.colorSelectorItemClassName,
           fontSelectorClassName = _this$props2.fontSelectorClassName,
-          fontSelectorItemClassName = _this$props2.fontSelectorItemClassName;
+          fontSelectorItemClassName = _this$props2.fontSelectorItemClassName,
+          textEffectDisabled = _this$props2.textEffectDisabled,
+          authorEffectDisabled = _this$props2.authorEffectDisabled;
+      var _this$state2 = this.state,
+          imageFilter = _this$state2.imageFilter,
+          imageFilters = _this$state2.imageFilters,
+          overlay = _this$state2.overlay,
+          overlays = _this$state2.overlays,
+          text = _this$state2.text,
+          textFontFamily = _this$state2.textFontFamily,
+          textAlign = _this$state2.textAlign,
+          textVerticalAlign = _this$state2.textVerticalAlign,
+          textVerticalAligns = _this$state2.textVerticalAligns,
+          textEffect = _this$state2.textEffect,
+          textEffects = _this$state2.textEffects,
+          separator = _this$state2.separator,
+          separators = _this$state2.separators,
+          author = _this$state2.author,
+          authorFontFamily = _this$state2.authorFontFamily,
+          authorAlign = _this$state2.authorAlign,
+          authorVerticalAlign = _this$state2.authorVerticalAlign,
+          authorVerticalAligns = _this$state2.authorVerticalAligns,
+          authorEffect = _this$state2.authorEffect,
+          authorEffects = _this$state2.authorEffects,
+          fonts = _this$state2.fonts,
+          aligns = _this$state2.aligns,
+          color = _this$state2.color;
       var _this$props3 = this.props,
           containerClassName = _this$props3.containerClassName,
           subtitleClassName = _this$props3.subtitleClassName,
@@ -3359,7 +3350,7 @@ function (_React$Component) {
         active: imageFilter,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3370,7 +3361,7 @@ function (_React$Component) {
         active: overlay,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3391,21 +3382,21 @@ function (_React$Component) {
         active: textFontFamily,
         className: fontSelectorClassName,
         itemsClassName: fontSelectorItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textAlign",
         items: aligns,
         active: textAlign,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "textVerticalAlign",
         items: textVerticalAligns,
         active: textVerticalAlign,
         className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }))), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3417,7 +3408,7 @@ function (_React$Component) {
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
         disabled: textEffectDisabled,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3428,7 +3419,7 @@ function (_React$Component) {
         active: separator,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3450,21 +3441,21 @@ function (_React$Component) {
         active: authorFontFamily,
         className: fontSelectorClassName,
         itemsClassName: fontSelectorItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorAlign",
         items: aligns,
         active: authorAlign,
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement(radio_buttons_RadioButtons, {
         id: "authorVerticalAlign",
         items: authorVerticalAligns,
         active: authorVerticalAlign,
         className: classnames_default()('configurator-text-vertical-align', radioButtonClassName),
         itemsClassName: radioButtonItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }))), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3476,7 +3467,7 @@ function (_React$Component) {
         className: radioButtonClassName,
         itemsClassName: radioButtonItemClassName,
         disabled: authorEffectDisabled,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("h3", {
         className: subtitleClassName
       }, external_react_default.a.createElement(external_react_intl_["FormattedMessage"], {
@@ -3486,7 +3477,7 @@ function (_React$Component) {
         active: color,
         className: colorSelectorClassName,
         itemsClassName: colorSelectorItemClassName,
-        onChange: this.props.onChange
+        onChange: this.handleChange
       }), external_react_default.a.createElement("button", {
         type: "submit",
         className: submitButtonClassName
@@ -3504,38 +3495,6 @@ src_defineProperty(src_Configurator, "defaultProps", {
   authorEffectDisabled: false
 });
 
-var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {
-    imageFilter: state.configurator.imageFilter || ownProps.imageFilter || 'none',
-    imageFilters: state.configurator.imageFilters.concat(ownProps.imageFilters || []),
-    overlay: state.configurator.overlay || ownProps.overlay || 'none',
-    overlays: state.configurator.overlays.concat(ownProps.overlays || []),
-    text: state.configurator.text || ownProps.text || '',
-    textFontFamily: state.configurator.textFontFamily || ownProps.textFontFamily,
-    textAlign: state.configurator.textAlign || ownProps.textAlign,
-    textVerticalAlign: state.configurator.textVerticalAlign || ownProps.textVerticalAlign,
-    textVerticalAligns: state.configurator.textVerticalAligns,
-    textEffect: state.configurator.textEffect || ownProps.textEffect,
-    textEffects: state.configurator.textEffects.concat(ownProps.textEffects || []),
-    separator: state.configurator.separator || ownProps.separator || 'none',
-    separators: state.configurator.separators.concat(ownProps.separators || []),
-    author: state.configurator.author || ownProps.author || '',
-    authorFontFamily: state.configurator.authorFontFamily || ownProps.authorFontFamily,
-    authorAlign: state.configurator.authorAlign || ownProps.authorAlign,
-    authorVerticalAlign: state.configurator.authorVerticalAlign || ownProps.authorVerticalAlign,
-    authorVerticalAligns: state.configurator.authorVerticalAligns,
-    authorEffect: state.configurator.authorEffect || ownProps.authorEffect,
-    authorEffects: state.configurator.authorEffects.concat(ownProps.authorEffects || []),
-    fonts: state.configurator.fonts,
-    aligns: state.configurator.aligns,
-    color: state.configurator.color
-  };
-};
-
-var mapDispatchToProps = {
-  onChange: actions_change
-};
-/* harmony default export */ var src_0 = __webpack_exports__["default"] = (Object(external_react_redux_["connect"])(mapStateToProps, mapDispatchToProps)(src_Configurator));
 
 
 /***/ })

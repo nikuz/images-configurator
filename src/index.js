@@ -1,18 +1,14 @@
 // @flow
 
 import React from 'react';
-import { connect } from 'react-redux';
 import cn from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import configuratorReducer from './reducer';
 import RadioButtons from './components/radio-buttons';
 import FontSelector from './components/font-selector';
 import ColorSelector from './components/color-selector';
-import { change } from './actions';
 import type {
     Item,
     ChangePayload,
-    Font,
 } from './types';
 import './styles.css';
 
@@ -33,31 +29,22 @@ type SubmitData = {
 };
 
 type Props = {
-    imageFilter: string,
-    imageFilters: Item[],
-    overlay: string,
-    overlays: Item[],
+    imageFilter?: string,
+    overlay?: string,
     text: string,
-    textFontFamily: string,
-    textAlign: string,
-    textVerticalAlign: string,
-    textVerticalAligns: Item[],
-    textEffect: string,
+    textFontFamily?: string,
+    textAlign?: string,
+    textVerticalAlign?: string,
+    textEffect?: string,
     textEffectDisabled?: boolean,
-    textEffects: Item[],
-    separator: string,
-    separators: Item[],
+    separator?: string,
     author: string,
-    authorFontFamily: string,
-    authorAlign: string,
-    authorVerticalAlign: string,
-    authorVerticalAligns: Item[],
-    authorEffect: string,
+    authorFontFamily?: string,
+    authorAlign?: string,
+    authorVerticalAlign?: string,
+    authorEffect?: string,
     authorEffectDisabled?: boolean,
-    authorEffects: Item[],
-    fonts: Font[],
-    aligns: Item[],
-    color: string,
+    color?: string,
     radioButtonClassName?: string | { [className: string]: * },
     radioButtonItemClassName?: string | { [className: string]: * },
     colorSelectorClassName?: string | { [className: string]: * },
@@ -69,21 +56,238 @@ type Props = {
     submitButtonClassName?: string | { [className: string]: * },
     textareaClassName?: string | { [className: string]: * },
     inputClassName?: string | { [className: string]: * },
-    onChange: (data: ChangePayload) => *,
+    onChange?: (data: ChangePayload) => *,
     onSubmit: (data: SubmitData) => *,
 };
 
-class Configurator extends React.Component<Props> {
+export type State = {
+    imageFilter?: string,
+    imageFilters: Item[],
+    overlay?: string,
+    overlays: Item[],
+    textFontFamily: string,
+    textAlign: string,
+    textEffect: string,
+    textEffects: Item[],
+    separators: Item[],
+    authorFontFamily: string,
+    authorAlign: string,
+    fonts: Item[],
+    aligns: Item[],
+};
+
+export default class Configurator extends React.Component<Props, State> {
     static defaultProps = {
         textEffectDisabled: false,
         authorEffectDisabled: false,
+    };
+
+    state = {
+        imageFilters: [{
+            id: 'none',
+            text: 'Configurator.Image-Filter.None',
+        }, {
+            id: 'shade',
+            text: 'Configurator.Image-Filter.Shade',
+        }, {
+            id: 'blur',
+            text: 'Configurator.Image-Filter.Blur',
+        }, {
+            id: 'bw',
+            text: 'Configurator.Image-Filter.BW',
+        }, {
+            id: 'Sepia',
+            text: 'Configurator.Image-Filter.Sepia',
+        }, {
+            id: 'Pixelate',
+            text: 'Configurator.Image-Filter.Pixelate',
+        }],
+        overlays: [{
+            id: 'none',
+            text: 'Configurator.Overlay.None',
+        }, {
+            id: 'solid',
+            text: 'Configurator.Overlay.Solid',
+        }, {
+            id: 'border',
+            text: 'Configurator.Overlay.Border',
+        }, {
+            id: 'lines',
+            text: 'Configurator.Overlay.Lines',
+        }],
+        text: 'There is no elevator to success, you have to take the stairs.',
+        textFontFamily: 'Courgette',
+        textAlign: 'center',
+        textVerticalAlign: 'center',
+        textEffect: 'type',
+        textEffects: [{
+            id: 'type',
+            text: 'Configurator.Quote-Text-Animation.Type',
+        }, {
+            id: 'fade-letters',
+            text: 'Configurator.Quote-Text-Animation.Fade-Letters',
+        }, {
+            id: 'fade-lines',
+            text: 'Configurator.Quote-Text-Animation.Fade-Lines',
+        }, {
+            id: 'slide-lines',
+            text: 'Configurator.Quote-Text-Animation.Slide-Lines',
+        }, {
+            id: 'append-lines',
+            text: 'Configurator.Quote-Text-Animation.Append-Lines',
+        }, {
+            id: 'fade',
+            text: 'Configurator.Quote-Text-Animation.Fade',
+        }],
+        textVerticalAligns: [{
+            id: 'top',
+            icon: 'vertical-top',
+        }, {
+            id: 'center',
+            icon: 'vertical-center',
+        }, {
+            id: 'bottom',
+            icon: 'vertical-bottom',
+        }],
+        separators: [{
+            id: 'none',
+            text: 'Configurator.Separator.None',
+        }, {
+            id: 'line',
+            text: 'Configurator.Separator.Ndash',
+        }, {
+            id: 'dash',
+            text: 'Configurator.Separator.Dashes',
+        }, {
+            id: 'dot',
+            text: 'Configurator.Separator.Dots',
+        }],
+        author: 'Quote Author',
+        authorFontFamily: 'Lobster',
+        authorAlign: 'center',
+        authorVerticalAlign: '',
+        authorVerticalAligns: [{
+            id: 'stick',
+            icon: 'vertical-top',
+        }, {
+            id: 'bottom',
+            icon: 'vertical-bottom',
+        }],
+        authorEffect: 'fade',
+        authorEffects: [{
+            id: 'type',
+            text: 'Configurator.Author-Text-Animation.Type',
+        }, {
+            id: 'slide',
+            text: 'Configurator.Author-Text-Animation.Slide',
+        }, {
+            id: 'fade',
+            text: 'Configurator.Author-Text-Animation.Fade',
+        }],
+        fonts: [{
+            id: 'Typograph',
+            icon: 'typograph',
+        }, {
+            id: 'Tahoma',
+            icon: 'tahoma',
+        }, {
+            id: 'Lobster',
+            icon: 'lobster',
+        }, {
+            id: 'Sports',
+            icon: 'sports',
+        }, {
+            id: 'Courgette',
+            icon: 'courgette',
+        }, {
+            id: 'Sensei',
+            icon: 'sensei',
+        }, {
+            id: 'GreatVibes',
+            icon: 'greatvibes',
+        }, {
+            id: 'Guerilla',
+            icon: 'guerilla',
+        }, {
+            id: 'Kaushan',
+            icon: 'kaushan',
+        }, {
+            id: 'Exo',
+            icon: 'exo',
+        }, {
+            id: 'YellowTail',
+            icon: 'yellowtail',
+        }, {
+            id: 'MyUnderwood',
+            icon: 'myunderwood',
+        }, {
+            id: 'NickAinley',
+            icon: 'nickainley',
+        }, {
+            id: 'Lato',
+            icon: 'lato',
+        }],
+        aligns: [{
+            id: 'left',
+            icon: 'align-left',
+        }, {
+            id: 'center',
+            icon: 'align-center',
+        }, {
+            id: 'right',
+            icon: 'align-right',
+        }],
+        color: '#FFFFFF'
+    };
+
+    constructor(props) {
+        super(props);
+
+        const state = this.state;
+
+        this.state = {
+            ...this.state,
+            imageFilter: props.imageFilter || state.imageFilter || 'none',
+            imageFilters: state.imageFilters.concat(props.imageFilters || []),
+            overlay: props.overlay || state.overlay || 'none',
+            overlays: state.overlays.concat(props.overlays || []),
+            text: props.text || state.text || '',
+            textFontFamily: props.textFontFamily || state.textFontFamily,
+            textAlign: props.textAlign || state.textAlign,
+            textVerticalAlign: props.textVerticalAlign || state.textVerticalAlign,
+            textEffect: props.textEffect || state.textEffect,
+            textEffects: state.textEffects.concat(props.textEffects || []),
+            separator: props.separator || state.separator || 'none',
+            separators: state.separators.concat(props.separators || []),
+            author: props.author || state.author || '',
+            authorFontFamily: props.authorFontFamily || state.authorFontFamily,
+            authorAlign: props.authorAlign || state.authorAlign,
+            authorVerticalAlign: props.authorVerticalAlign || state.authorVerticalAlign,
+            authorEffect: props.authorEffect || state.authorEffect,
+            authorEffects: state.authorEffects.concat(props.authorEffects || []),
+        };
+    }
+
+    handleChange = (data: ChangePayload) => {
+        const { onChange } = this.props;
+
+        this.setState({
+            [data.id]: data.value,
+        });
+
+        if (onChange instanceof Function) {
+            this.props.onChange({
+                id,
+                value,
+            });
+        }
     };
 
     textValueChange = (e) => {
         const id = e.target.id;
         const value = e.target.value;
 
-        this.props.onChange({
+        this.handleChange({
             id,
             value,
         });
@@ -100,15 +304,17 @@ class Configurator extends React.Component<Props> {
             textAlign,
             textVerticalAlign,
             textEffect,
-            textEffectDisabled,
             separator,
             author,
             authorFontFamily,
             authorAlign,
             authorVerticalAlign,
             authorEffect,
-            authorEffectDisabled,
             color,
+        } = this.state;
+        const {
+            textEffectDisabled,
+            authorEffectDisabled,
         } = this.props;
 
         this.props.onSubmit({
@@ -132,6 +338,16 @@ class Configurator extends React.Component<Props> {
 
     render() {
         const {
+            radioButtonClassName,
+            radioButtonItemClassName,
+            colorSelectorClassName,
+            colorSelectorItemClassName,
+            fontSelectorClassName,
+            fontSelectorItemClassName,
+            textEffectDisabled,
+            authorEffectDisabled,
+        } = this.props;
+        const {
             imageFilter,
             imageFilters,
             overlay,
@@ -142,7 +358,6 @@ class Configurator extends React.Component<Props> {
             textVerticalAlign,
             textVerticalAligns,
             textEffect,
-            textEffectDisabled,
             textEffects,
             separator,
             separators,
@@ -152,18 +367,11 @@ class Configurator extends React.Component<Props> {
             authorVerticalAlign,
             authorVerticalAligns,
             authorEffect,
-            authorEffectDisabled,
             authorEffects,
             fonts,
             aligns,
             color,
-            radioButtonClassName,
-            radioButtonItemClassName,
-            colorSelectorClassName,
-            colorSelectorItemClassName,
-            fontSelectorClassName,
-            fontSelectorItemClassName,
-        } = this.props;
+        } = this.state;
         let {
             containerClassName,
             subtitleClassName,
@@ -204,7 +412,7 @@ class Configurator extends React.Component<Props> {
                     active={imageFilter}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
@@ -216,7 +424,7 @@ class Configurator extends React.Component<Props> {
                     active={overlay}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
@@ -237,7 +445,7 @@ class Configurator extends React.Component<Props> {
                             active={textFontFamily}
                             className={fontSelectorClassName}
                             itemsClassName={fontSelectorItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                         <RadioButtons
                             id="textAlign"
@@ -245,7 +453,7 @@ class Configurator extends React.Component<Props> {
                             active={textAlign}
                             className={radioButtonClassName}
                             itemsClassName={radioButtonItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                         <RadioButtons
                             id="textVerticalAlign"
@@ -253,7 +461,7 @@ class Configurator extends React.Component<Props> {
                             active={textVerticalAlign}
                             className={cn('configurator-text-vertical-align', radioButtonClassName)}
                             itemsClassName={radioButtonItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                     </div>
                 </div>
@@ -268,7 +476,7 @@ class Configurator extends React.Component<Props> {
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
                     disabled={textEffectDisabled}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
@@ -280,7 +488,7 @@ class Configurator extends React.Component<Props> {
                     active={separator}
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
 
                 <h3 className={subtitleClassName}>
@@ -302,7 +510,7 @@ class Configurator extends React.Component<Props> {
                             active={authorFontFamily}
                             className={fontSelectorClassName}
                             itemsClassName={fontSelectorItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                         <RadioButtons
                             id="authorAlign"
@@ -310,7 +518,7 @@ class Configurator extends React.Component<Props> {
                             active={authorAlign}
                             className={radioButtonClassName}
                             itemsClassName={radioButtonItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                         <RadioButtons
                             id="authorVerticalAlign"
@@ -318,7 +526,7 @@ class Configurator extends React.Component<Props> {
                             active={authorVerticalAlign}
                             className={cn('configurator-text-vertical-align', radioButtonClassName)}
                             itemsClassName={radioButtonItemClassName}
-                            onChange={this.props.onChange}
+                            onChange={this.handleChange}
                         />
                     </div>
                 </div>
@@ -334,7 +542,7 @@ class Configurator extends React.Component<Props> {
                     className={radioButtonClassName}
                     itemsClassName={radioButtonItemClassName}
                     disabled={authorEffectDisabled}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
                 <h3 className={subtitleClassName}>
                     <FormattedMessage id="Configurator.Color.Title" />
@@ -344,7 +552,7 @@ class Configurator extends React.Component<Props> {
                     active={color}
                     className={colorSelectorClassName}
                     itemsClassName={colorSelectorItemClassName}
-                    onChange={this.props.onChange}
+                    onChange={this.handleChange}
                 />
 
                 <button type="submit" className={submitButtonClassName}>
@@ -354,42 +562,3 @@ class Configurator extends React.Component<Props> {
         );
     }
 }
-
-const mapStateToProps = (state: Object, ownProps: Object) => ({
-    imageFilter: state.configurator.imageFilter || ownProps.imageFilter || 'none',
-    imageFilters: state.configurator.imageFilters.concat(ownProps.imageFilters || []),
-    overlay: state.configurator.overlay || ownProps.overlay || 'none',
-    overlays: state.configurator.overlays.concat(ownProps.overlays || []),
-    text: state.configurator.text || ownProps.text || '',
-    textFontFamily: state.configurator.textFontFamily || ownProps.textFontFamily,
-    textAlign: state.configurator.textAlign || ownProps.textAlign,
-    textVerticalAlign: state.configurator.textVerticalAlign || ownProps.textVerticalAlign,
-    textVerticalAligns: state.configurator.textVerticalAligns,
-    textEffect: state.configurator.textEffect || ownProps.textEffect,
-    textEffects: state.configurator.textEffects.concat(ownProps.textEffects || []),
-    separator: state.configurator.separator || ownProps.separator || 'none',
-    separators: state.configurator.separators.concat(ownProps.separators || []),
-    author: state.configurator.author || ownProps.author || '',
-    authorFontFamily: state.configurator.authorFontFamily || ownProps.authorFontFamily,
-    authorAlign: state.configurator.authorAlign || ownProps.authorAlign,
-    authorVerticalAlign: state.configurator.authorVerticalAlign || ownProps.authorVerticalAlign,
-    authorVerticalAligns: state.configurator.authorVerticalAligns,
-    authorEffect: state.configurator.authorEffect || ownProps.authorEffect,
-    authorEffects: state.configurator.authorEffects.concat(ownProps.authorEffects || []),
-    fonts: state.configurator.fonts,
-    aligns: state.configurator.aligns,
-    color: state.configurator.color,
-});
-
-const mapDispatchToProps = {
-    onChange: change,
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Configurator);
-
-export {
-    configuratorReducer,
-};

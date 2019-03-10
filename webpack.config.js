@@ -30,8 +30,6 @@ if (isProduction) {
         react: 'react',
         'react-dom': 'react-dom',
         'react-intl': 'react-intl',
-        'react-redux': 'react-redux',
-        redux: 'redux',
     };
 } else {
     plugins.push(
