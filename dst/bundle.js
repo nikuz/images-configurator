@@ -2157,7 +2157,7 @@ if(false) {}
 
 exports = module.exports = __webpack_require__(5)(false);
 // Module
-exports.push([module.i, "\n.configurator-font-selector-container {\n    margin-right: 20px;\n    user-select: none;\n}\n\n.configurator-font-selector {\n    display: inline-block;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    border-radius: 4px;\n    color: #333;\n    font-size: 0;\n    cursor: pointer;\n}\n\n.configurator-font-selector:hover {\n    background-color: var(--gray-light);\n}\n\n.configurator-font-selector-current-font {\n    width: 100px;\n    height: 50px;\n    vertical-align: middle;\n}\n\n\n.configurator-font-selector-icon-container {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.configurator-font-selector:active .configurator-font-selector-icon-container {\n    top: 1px;\n}\n\n.configurator-font-selector-icon {\n    width: 30px;\n    height: 30px;\n    margin-right: 5px;\n}\n\n.configurator-font-selector-blocker {\n    position: fixed;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .2);\n    z-index: 1000;\n}\n\n.configurator-font-selector-tooltip {\n    position: absolute;\n    width: 300px;\n    overflow: auto;\n    background-color: var(--white);\n    text-align: center;\n    z-index: 1001;\n}\n\n.configurator-font-selector-tooltip-icon {\n    width: 200px;\n    height: 50px;\n}\n\n.configurator-font-selector-item {\n    cursor: pointer;\n}\n\n.configurator-font-selector-item:hover,\n.configurator-font-selector-item.active {\n    background-color: var(--gray-light);\n}\n", ""]);
+exports.push([module.i, "\n.configurator-font-selector-container {\n    margin-right: 20px;\n    user-select: none;\n}\n\n.configurator-font-selector {\n    display: inline-block;\n    background-color: var(--white);\n    border: 1px solid var(--gray);\n    border-radius: 4px;\n    color: #333;\n    font-size: 0;\n    cursor: pointer;\n}\n\n.configurator-font-selector:hover {\n    background-color: var(--gray-light);\n}\n\n.configurator-font-selector-current-font {\n    width: 100px;\n    height: 50px;\n    vertical-align: middle;\n}\n\n\n.configurator-font-selector-icon-container {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.configurator-font-selector:active .configurator-font-selector-icon-container {\n    top: 1px;\n}\n\n.configurator-font-selector-icon {\n    width: 30px;\n    height: 30px;\n    margin-right: 5px;\n}\n\n.configurator-font-selector-blocker {\n    position: fixed;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .2);\n    z-index: 1000;\n}\n\n.configurator-font-selector-tooltip {\n    position: absolute;\n    width: 300px;\n    overflow: auto;\n    background-color: var(--white);\n    text-align: center;\n    z-index: 99999;\n}\n\n.configurator-font-selector-tooltip-icon {\n    width: 200px;\n    height: 50px;\n}\n\n.configurator-font-selector-item {\n    cursor: pointer;\n}\n\n.configurator-font-selector-item:hover,\n.configurator-font-selector-item.active {\n    background-color: var(--gray-light);\n}\n", ""]);
 
 
 
@@ -2725,23 +2725,21 @@ function (_React$Component) {
         rw = ww;
       }
 
-      var hCenterPosition = containerRect.top - rh / 2;
-      var top = hCenterPosition;
+      var top = window.scrollY + containerRect.top + containerRect.height / 2 - rh / 2;
 
-      if (hCenterPosition < 0 || hCenterPosition < window.scrollY) {
+      if (top < 0 || top < window.scrollY) {
         top = window.scrollY;
-      } else if (hCenterPosition + rh > wBottom) {
-        top = hCenterPosition - (hCenterPosition + rh - wBottom);
+      } else if (top + rh > wBottom) {
+        top = top - (top + rh - wBottom);
       }
 
       tooltipEl.style.top = "".concat(top, "px");
-      var wCenterPosition = containerRect.left - rw / 2;
-      var left = window.scrollX + wCenterPosition;
+      var left = window.scrollX + containerRect.left;
 
-      if (wCenterPosition < 0 || wCenterPosition < window.scrollX) {
+      if (left < 0 || left < window.scrollX) {
         left = window.scrollX;
-      } else if (wCenterPosition + rw > wRight) {
-        left = wCenterPosition - (wCenterPosition + rw - wRight);
+      } else if (left + rw > wRight) {
+        left = left - (left + rw - wRight);
       }
 
       tooltipEl.style.left = "".concat(left, "px");

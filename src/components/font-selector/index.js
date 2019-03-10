@@ -72,21 +72,19 @@ export default class FontSelector extends React.Component<Props, State> {
             rw = ww;
         }
 
-        const hCenterPosition = containerRect.top - (rh / 2);
-        let top = hCenterPosition;
-        if (hCenterPosition < 0 || hCenterPosition < window.scrollY) {
+        let top = window.scrollY + containerRect.top + (containerRect.height / 2) - (rh / 2);
+        if (top < 0 || top < window.scrollY) {
             top = window.scrollY;
-        } else if (hCenterPosition + rh > wBottom) {
-            top = hCenterPosition - ((hCenterPosition + rh) - wBottom);
+        } else if (top + rh > wBottom) {
+            top = top - ((top + rh) - wBottom);
         }
         tooltipEl.style.top = `${top}px`;
 
-        const wCenterPosition = containerRect.left - (rw / 2);
-        let left = window.scrollX + wCenterPosition;
-        if (wCenterPosition < 0 || wCenterPosition < window.scrollX) {
+        let left = window.scrollX + containerRect.left;
+        if (left < 0 || left < window.scrollX) {
             left = window.scrollX;
-        } else if (wCenterPosition + rw > wRight) {
-            left = wCenterPosition - ((wCenterPosition + rw) - wRight);
+        } else if (left + rw > wRight) {
+            left = left - ((left + rw) - wRight);
         }
         tooltipEl.style.left = `${left}px`;
     };
