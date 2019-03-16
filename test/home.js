@@ -10,23 +10,8 @@ const renderProps = {
     width: 600,
     height: 600,
     imageURL: '/graphics/001.jpeg',
-    // text
-    text: '',
-    textFontFamily: '',
-    textEffect: '', // type | fade lines | fade letters | slide lines | append lines | fade
-    textAlign: '', // left | center | right
-    textVerticalAlign: '', // top | center | bottom
-    // author
-    author: '',
-    authorFontFamily: '',
-    authorEffect: '', // type | slide | append | fade
-    authorAlign: '', // left | center | right
-    authorVerticalAlign: '', // top | center | bottom
     // common
     animate: true,
-    frameQuality: 0.93,
-    overlay: '', // solid | lines | border
-    color: '#FFF',
 };
 
 type Props = {};
