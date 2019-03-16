@@ -13,7 +13,7 @@ import './styles.css';
 type Props = {
     id: string,
     items: Item[],
-    active: string,
+    active: ?string,
     disabled?: boolean,
     className?: string | { [className: string]: * },
     itemsClassName?: string | { [className: string]: * },
@@ -67,9 +67,13 @@ export default class RadioButtons extends React.Component<Props> {
                             className={itemClassName}
                         >
                             { item.text && (
-                                <FormattedMessage id={
-                                    translationDomain ? `${translationDomain}.${item.text}` : item.text
-                                } />
+                                <FormattedMessage
+                                    id={
+                                        translationDomain
+                                            ? `${translationDomain}.${item.text}`
+                                            : item.text
+                                    }
+                                />
                             ) }
                             { item.icon && (
                                 <Icon

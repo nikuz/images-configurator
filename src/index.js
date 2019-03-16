@@ -8,24 +8,25 @@ import FontSelector from './components/font-selector';
 import ColorSelector from './components/color-selector';
 import type {
     Item,
+    Font,
     ChangePayload,
 } from './types';
 import './styles.css';
 
 type SubmitData = {
-    filter: string,
-    overlay: string,
+    filter: ?string,
+    overlay: ?string,
     textFontFamily: string,
     textAlign: string,
     textVerticalAlign: string,
     textEffect: string,
-    separator: string,
+    separator: ?string,
     authorFontFamily: string,
     authorAlign: string,
     authorVerticalAlign: string,
     authorEffect: string,
-    color: string,
-    animated: boolean,
+    color: ?string,
+    animate: boolean,
 };
 
 type Props = {
@@ -57,24 +58,39 @@ type Props = {
     textareaClassName?: string | { [className: string]: * },
     inputClassName?: string | { [className: string]: * },
     translationDomain?: string,
+    filters?: Item[],
+    overlays?: Item[],
+    textEffects?: Item[],
+    separators?: Item[],
+    authorEffects?: Item[],
     onChange?: (data: ChangePayload) => *,
     onSubmit: (data: SubmitData) => *,
 };
 
 export type State = {
-    filter?: string,
+    text: ?string,
+    filter: ?string,
     filters: Item[],
-    overlay?: string,
+    overlay: ?string,
     overlays: Item[],
     textFontFamily: string,
     textAlign: string,
+    textVerticalAligns: Item[],
+    textVerticalAlign: string,
     textEffect: string,
     textEffects: Item[],
-    separators: Item[],
+    author: ?string,
     authorFontFamily: string,
     authorAlign: string,
-    fonts: Item[],
+    authorVerticalAligns: Item[],
+    authorVerticalAlign: string,
+    authorEffects: Item[],
+    authorEffect: string,
+    fonts: Font[],
     aligns: Item[],
+    separators: Item[],
+    separator?: string,
+    color: ?string,
 };
 
 export default class Configurator extends React.Component<Props, State> {
@@ -84,6 +100,7 @@ export default class Configurator extends React.Component<Props, State> {
     };
 
     state = {
+        filter: undefined,
         filters: [{
             id: 'none',
             text: 'Configurator.Image-Filter.None',
@@ -115,6 +132,7 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'raise',
             text: 'Configurator.Image-Filter.Raise',
         }],
+        overlay: undefined,
         overlays: [{
             id: 'none',
             text: 'Configurator.Overlay.None',
@@ -128,7 +146,7 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'lines',
             text: 'Configurator.Overlay.Lines',
         }],
-        text: 'There is no elevator to success, you have to take the stairs.',
+        text: undefined,
         textFontFamily: 'Courgette',
         textAlign: 'center',
         textVerticalAlign: 'center',
@@ -162,6 +180,7 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'bottom',
             icon: 'vertical-bottom',
         }],
+        separator: undefined,
         separators: [{
             id: 'none',
             text: 'Configurator.Separator.None',
@@ -175,10 +194,10 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'dot',
             text: 'Configurator.Separator.Dots',
         }],
-        author: 'Quote Author',
+        author: undefined,
         authorFontFamily: 'Lobster',
         authorAlign: 'center',
-        authorVerticalAlign: '',
+        authorVerticalAlign: 'stick',
         authorVerticalAligns: [{
             id: 'stick',
             icon: 'vertical-top',
@@ -250,10 +269,10 @@ export default class Configurator extends React.Component<Props, State> {
             id: 'right',
             icon: 'align-right',
         }],
-        color: '#FFFFFF'
+        color: undefined,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
 
         const state = this.state;
@@ -264,7 +283,7 @@ export default class Configurator extends React.Component<Props, State> {
             filters: state.filters.concat(props.filters || []),
             overlay: props.overlay || state.overlay || 'none',
             overlays: state.overlays.concat(props.overlays || []),
-            text: props.text || state.text || '',
+            text: props.text,
             textFontFamily: props.textFontFamily || state.textFontFamily,
             textAlign: props.textAlign || state.textAlign,
             textVerticalAlign: props.textVerticalAlign || state.textVerticalAlign,
@@ -272,12 +291,13 @@ export default class Configurator extends React.Component<Props, State> {
             textEffects: state.textEffects.concat(props.textEffects || []),
             separator: props.separator || state.separator || 'none',
             separators: state.separators.concat(props.separators || []),
-            author: props.author || state.author || '',
+            author: props.author,
             authorFontFamily: props.authorFontFamily || state.authorFontFamily,
             authorAlign: props.authorAlign || state.authorAlign,
             authorVerticalAlign: props.authorVerticalAlign || state.authorVerticalAlign,
             authorEffect: props.authorEffect || state.authorEffect,
             authorEffects: state.authorEffects.concat(props.authorEffects || []),
+            color: props.color || state.color || '#FFFFFF',
         };
     }
 
@@ -289,14 +309,14 @@ export default class Configurator extends React.Component<Props, State> {
         });
 
         if (onChange instanceof Function) {
-            this.props.onChange({
-                id,
-                value,
+            onChange({
+                id: data.id,
+                value: data.value,
             });
         }
     };
 
-    textValueChange = (e) => {
+    textValueChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
         const id = e.target.id;
         const value = e.target.value;
 
@@ -311,7 +331,7 @@ export default class Configurator extends React.Component<Props, State> {
         return `${translationDomain ? `${translationDomain}.` : ''}${id}`;
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const {

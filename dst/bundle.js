@@ -2637,12 +2637,12 @@ _defineProperty(radio_buttons_RadioButtons, "defaultProps", {
 });
 
 
-// EXTERNAL MODULE: ./src/components/font-selector/styles.css
-var font_selector_styles = __webpack_require__(14);
-
 // EXTERNAL MODULE: external "react-dom"
 var external_react_dom_ = __webpack_require__(8);
 var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
+
+// EXTERNAL MODULE: ./src/components/font-selector/styles.css
+var font_selector_styles = __webpack_require__(14);
 
 // CONCATENATED MODULE: ./src/components/font-selector/index.js
 function font_selector_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { font_selector_typeof = function _typeof(obj) { return typeof obj; }; } else { font_selector_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return font_selector_typeof(obj); }
@@ -2730,7 +2730,7 @@ function (_React$Component) {
       if (top < 0 || top < window.scrollY) {
         top = window.scrollY;
       } else if (top + rh > wBottom) {
-        top = top - (top + rh - wBottom);
+        top -= top + rh - wBottom;
       }
 
       tooltipEl.style.top = "".concat(top, "px");
@@ -2739,7 +2739,7 @@ function (_React$Component) {
       if (left < 0 || left < window.scrollX) {
         left = window.scrollX;
       } else if (left + rw > wRight) {
-        left = left - (left + rw - wRight);
+        left -= left + rw - wRight;
       }
 
       tooltipEl.style.left = "".concat(left, "px");
@@ -3070,6 +3070,7 @@ function (_React$Component) {
     _this = src_possibleConstructorReturn(this, src_getPrototypeOf(Configurator).call(this, props));
 
     src_defineProperty(src_assertThisInitialized(_this), "state", {
+      filter: undefined,
       filters: [{
         id: 'none',
         text: 'Configurator.Image-Filter.None'
@@ -3101,6 +3102,7 @@ function (_React$Component) {
         id: 'raise',
         text: 'Configurator.Image-Filter.Raise'
       }],
+      overlay: undefined,
       overlays: [{
         id: 'none',
         text: 'Configurator.Overlay.None'
@@ -3114,7 +3116,7 @@ function (_React$Component) {
         id: 'lines',
         text: 'Configurator.Overlay.Lines'
       }],
-      text: 'There is no elevator to success, you have to take the stairs.',
+      text: undefined,
       textFontFamily: 'Courgette',
       textAlign: 'center',
       textVerticalAlign: 'center',
@@ -3148,6 +3150,7 @@ function (_React$Component) {
         id: 'bottom',
         icon: 'vertical-bottom'
       }],
+      separator: undefined,
       separators: [{
         id: 'none',
         text: 'Configurator.Separator.None'
@@ -3161,10 +3164,10 @@ function (_React$Component) {
         id: 'dot',
         text: 'Configurator.Separator.Dots'
       }],
-      author: 'Quote Author',
+      author: undefined,
       authorFontFamily: 'Lobster',
       authorAlign: 'center',
-      authorVerticalAlign: '',
+      authorVerticalAlign: 'stick',
       authorVerticalAligns: [{
         id: 'stick',
         icon: 'vertical-top'
@@ -3236,7 +3239,7 @@ function (_React$Component) {
         id: 'right',
         icon: 'align-right'
       }],
-      color: '#FFFFFF'
+      color: undefined
     });
 
     src_defineProperty(src_assertThisInitialized(_this), "handleChange", function (data) {
@@ -3245,9 +3248,9 @@ function (_React$Component) {
       _this.setState(src_defineProperty({}, data.id, data.value));
 
       if (onChange instanceof Function) {
-        _this.props.onChange({
-          id: id,
-          value: value
+        onChange({
+          id: data.id,
+          value: data.value
         });
       }
     });
@@ -3313,7 +3316,7 @@ function (_React$Component) {
       filters: state.filters.concat(props.filters || []),
       overlay: props.overlay || state.overlay || 'none',
       overlays: state.overlays.concat(props.overlays || []),
-      text: props.text || state.text || '',
+      text: props.text,
       textFontFamily: props.textFontFamily || state.textFontFamily,
       textAlign: props.textAlign || state.textAlign,
       textVerticalAlign: props.textVerticalAlign || state.textVerticalAlign,
@@ -3321,12 +3324,13 @@ function (_React$Component) {
       textEffects: state.textEffects.concat(props.textEffects || []),
       separator: props.separator || state.separator || 'none',
       separators: state.separators.concat(props.separators || []),
-      author: props.author || state.author || '',
+      author: props.author,
       authorFontFamily: props.authorFontFamily || state.authorFontFamily,
       authorAlign: props.authorAlign || state.authorAlign,
       authorVerticalAlign: props.authorVerticalAlign || state.authorVerticalAlign,
       authorEffect: props.authorEffect || state.authorEffect,
-      authorEffects: state.authorEffects.concat(props.authorEffects || [])
+      authorEffects: state.authorEffects.concat(props.authorEffects || []),
+      color: props.color || state.color || '#FFFFFF'
     });
     return _this;
   }

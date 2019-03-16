@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import cn from 'classnames';
 import Icon from '../icon';
 import type {
@@ -8,7 +9,6 @@ import type {
     ChangePayload,
 } from '../../types';
 import './styles.css';
-import ReactDOM from "react-dom";
 
 type Props = {
     id: string,
@@ -76,7 +76,7 @@ export default class FontSelector extends React.Component<Props, State> {
         if (top < 0 || top < window.scrollY) {
             top = window.scrollY;
         } else if (top + rh > wBottom) {
-            top = top - ((top + rh) - wBottom);
+            top -= (top + rh) - wBottom;
         }
         tooltipEl.style.top = `${top}px`;
 
@@ -84,7 +84,7 @@ export default class FontSelector extends React.Component<Props, State> {
         if (left < 0 || left < window.scrollX) {
             left = window.scrollX;
         } else if (left + rw > wRight) {
-            left = left - ((left + rw) - wRight);
+            left -= (left + rw) - wRight;
         }
         tooltipEl.style.left = `${left}px`;
     };

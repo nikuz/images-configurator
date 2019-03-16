@@ -29,7 +29,9 @@ const renderProps = {
     color: '#FFF',
 };
 
-export default class Home extends React.Component<void> {
+type Props = {};
+
+export default class Home extends React.Component<Props> {
     rendererContainer: ?HTMLElement;
 
     renderImage = (opts: Object) => {
@@ -56,6 +58,8 @@ export default class Home extends React.Component<void> {
         return [
             <ImageConfigurator
                 key="configurator"
+                text="There is no elevator to success, you have to take the stairs."
+                author="Quote Author"
                 onSubmit={this.onFilterChange}
             />,
             <div key="canvas" ref={el => this.rendererContainer = el} />,

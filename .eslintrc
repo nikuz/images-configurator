@@ -1,5 +1,6 @@
 extends:
-  eslint-config-airbnb
+  - eslint-config-airbnb
+  - plugin:flowtype/recommended
 
 plugins:
   - flowtype

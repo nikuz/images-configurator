@@ -14,7 +14,7 @@ type Color = {
 
 type Props = {
     id: string,
-    active: string,
+    active: ?string,
     className?: string | { [className: string]: * },
     itemsClassName?: string | { [className: string]: * },
     onChange: (data: ChangePayload) => *,
@@ -30,58 +30,58 @@ export default class ColorSelector extends React.Component<Props> {
 
     colors = [{
         name: 'White',
-        value: '#FFFFFF'
+        value: '#FFFFFF',
     }, {
         name: 'Aureolin',
-        value: '#FDEE00'
+        value: '#FDEE00',
     }, {
         name: 'Amber',
-        value: '#FF7E00'
+        value: '#FF7E00',
     }, {
         name: 'Lime',
-        value: '#D0FF14'
+        value: '#D0FF14',
     }, {
         name: 'Green',
-        value: '#00FF00'
+        value: '#00FF00',
     }, {
         name: 'Aqua',
-        value: '#00FFFF'
+        value: '#00FFFF',
     }, {
         name: 'Azure',
-        value: '#007FFF'
+        value: '#007FFF',
     }, {
         name: 'Shades of pink',
-        value: '#FF007F'
+        value: '#FF007F',
     }, {
         name: 'Candy apple red',
-        value: '#FF0800'
+        value: '#FF0800',
     }, {
         name: 'Shades of white',
-        value: '#E2E5DE'
+        value: '#E2E5DE',
     }, {
         name: 'Lemon yellow',
-        value: '#FFFF9F'
+        value: '#FFFF9F',
     }, {
         name: 'Light goldenrod',
-        value: '#FFEC8B'
+        value: '#FFEC8B',
     }, {
         name: 'Light moss green',
-        value: '#ADDFAD'
+        value: '#ADDFAD',
     }, {
         name: 'Alien Armpit',
-        value: '#84DE02'
+        value: '#84DE02',
     }, {
         name: 'Light cyan',
-        value: '#E0FFFF'
+        value: '#E0FFFF',
     }, {
         name: 'Light sky blue',
-        value: '#87CEFA'
+        value: '#87CEFA',
     }, {
         name: 'Light deep pink',
-        value: '#FF5CCD'
+        value: '#FF5CCD',
     }, {
         name: 'Shades of red',
-        value: '#FF6961'
+        value: '#FF6961',
     }];
 
     renderColor = (color: Color) => {

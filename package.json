@@ -1,6 +1,6 @@
 {
   "name": "@nikuz/images-configurator",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "files": [
     "dst"
@@ -10,6 +10,7 @@
     "flow-typed": "mkdir flow-typed && mkdir flow-typed/npm && flow-typed install classnames@2.x.x && npm run create-stub",
     "create-stub": "flow-typed create-stub @nikuz/images-core",
     "start": "NODE_ENV=development webpack-dev-server",
+    "prebuild": "npm run flow && npm run eslint",
     "build": "NODE_ENV=production webpack",
     "eslint": "eslint ./webpack.config.js ./src ./test -f table",
     "flow": "flow check"
@@ -31,7 +32,7 @@
     "babel-loader": "8.0.5",
     "copy-webpack-plugin": "4.6.0",
     "css-loader": "2.1.0",
-    "eslint": "5.12.1",
+    "eslint": "5.15.2",
     "eslint-config-airbnb": "17.1.0",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "3.2.1",
